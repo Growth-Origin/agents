@@ -1,0 +1,15 @@
+{
+  "name": "ckb-builder",
+  "version": "0.2.0",
+  "description": "Construye el Client Knowledge Base (CKB) consolidado de un cliente nuevo de una agencia de marketing a partir de la memoria del Pre-Onboarding y una o varias transcripciones de entrevistas, más documentación opcional del cliente, su web y LinkedIn. Produce cinco módulos consolidados, un índice maestro y un guion del workshop de validación. Idioma de salida y de diálogo: español de España (peninsular).",
+  "author": {
+    "name": "Growth Origin"
+  },
+  "keywords": [
+    "ckb",
+    "client-knowledge-base",
+    "onboarding",
+    "marketing",
+    "agency"
+  ]
+}
