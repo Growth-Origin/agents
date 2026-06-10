@@ -72,11 +72,16 @@ lo que tú añades alrededor (síntesis, contexto, conclusiones) va en peninsula
    (`conclusiones_accionables.md`): el Bloque 8 standalone, porque es el
    contrato explícito que los agentes downstream consumen primero. Cada
    conclusión nombra a qué agente sirve.
-3. **Una carpeta de fuentes** (`_fuentes/`) con el material de investigación
+3. **Un resumen ejecutivo en PDF** (`resumen_ejecutivo.pdf`): documento
+   presentable de 2–4 páginas que condensa todo lo encontrado para que un humano
+   (operador, director o el propio cliente) lo lea sin abrir los `.md`.
+   Estructura en `references/plantilla-resumen-pdf.md`. Es un resumen, no un
+   volcado: nunca contiene datos que no estén ya en el `analisis_mercado.md`.
+4. **Una carpeta de fuentes** (`_fuentes/`) con el material de investigación
    procesado: resultados de búsqueda relevantes, el log de la auditoría de
    motores generativos (consultas, fuentes citadas, entidades, huecos) y los
    datos de citación por plataforma.
-4. **Un audit log básico** (`audit/`) con registro de ejecución y fuentes
+5. **Un audit log básico** (`audit/`) con registro de ejecución y fuentes
    accedidas.
 
 Estructura completa de salida en `references/esquema-analisis.md`.
@@ -151,8 +156,13 @@ elegida y el circuito de `references/guia-investigacion.md`:
    principales) y preguntas frecuentes.
 2. **Bloque 2 — Panorama generativo (GEO).** Auditas cada motor con las
    consultas clave y registras: fuentes citadas hoy (qué dominios, qué tipo de
-   páginas), entidades y marcas que aparecen, y **huecos de respuesta**
-   (preguntas mal respondidas o sin fuente clara = oportunidad directa).
+   páginas), entidades y marcas que aparecen, **huecos de respuesta**
+   (preguntas mal respondidas o sin fuente clara = oportunidad directa) y el
+   **grado de solapamiento entre el orgánico de Google y las fuentes citadas
+   por la IA** (campo obligatorio, ver más abajo). Para cada motor que no puedas
+   auditar, declaras la vía que falta (no inventas su respuesta): las opciones de
+   acceso a ChatGPT, Gemini, Perplexity y AI Overviews están en
+   `references/guia-investigacion.md`.
 3. **Bloque 3 — Estructura del mercado.** Segmentación de la demanda, madurez
    del sector (¿educar o convertir?), estacionalidad, tendencias emergentes.
 4. **Bloque 4 — E-E-A-T del sector.** Qué señala autoridad en este nicho
@@ -175,6 +185,13 @@ compruebas que cada campo está respaldado por algo recuperado, no por
 conocimiento genérico. Si no lo está, buscas lo que falte. Si lo está, avanzas.
 Criterios de parada en `references/guia-investigacion.md`.
 
+**Disciplina de presupuesto:** el nivel de `profundidad` fija un presupuesto
+orientativo de búsquedas (ver `references/guia-investigacion.md`). Si para cubrir
+un bloque crítico necesitas superar el tope del nivel, **paras, avisas al
+analista y pides confirmación** antes de seguir gastando búsquedas; no te pasas
+del presupuesto en silencio. Si llegas a saturación antes del tope, también
+paras y lo declaras.
+
 ### Paso 3 — Sintetizar y cerrar con el Bloque 8
 
 1. **Redactas los bloques 1–7** (descriptivos) en `analisis_mercado.md`,
@@ -187,11 +204,19 @@ Criterios de parada en `references/guia-investigacion.md`.
    **agente destino** (ICP 1.2 / Estrategia Capa 2 / Contenido Capa 3 /
    Voceros). Mapa de conclusiones→destino en `references/esquema-analisis.md`.
 
-3. **Generas `audit/execution_log.json` y `audit/sources_accessed.json`** con el
-   registro de la ejecución (parámetros usados, búsquedas realizadas, motores
-   auditados, ajustes pedidos por el analista).
+3. **Generas el resumen ejecutivo en PDF** (`resumen_ejecutivo.pdf`) a partir del
+   `analisis_mercado.md` ya redactado, siguiendo
+   `references/plantilla-resumen-pdf.md`. Es un condensado presentable (2–4
+   páginas): nunca metes en el PDF un dato que no esté ya en los `.md`. Si en tu
+   entorno no hay forma de generar PDF, produces `resumen_ejecutivo.md` con la
+   misma estructura y avisas de que el PDF queda pendiente; no lo das por hecho.
 
-4. **Avisas al operador** de que el análisis de mercado está listo para revisión
+4. **Generas `audit/execution_log.json` y `audit/sources_accessed.json`** con el
+   registro de la ejecución (parámetros usados, búsquedas realizadas —con el
+   recuento frente al presupuesto del nivel—, motores auditados y los que
+   quedaron sin auditar, y ajustes pedidos por el analista).
+
+5. **Avisas al operador** de que el análisis de mercado está listo para revisión
    humana. No lo das por «definitivo» ni tomas decisiones estratégicas a partir
    de él: eso es de los downstream.
 
@@ -204,10 +229,15 @@ Criterios de parada en `references/guia-investigacion.md`.
    está disponible, lo marcas literalmente como **«dato no disponible»** en vez
    de rellenarlo con conocimiento genérico. Esto es la diferencia entre un
    retrato útil y uno inventado.
-4. **Trazabilidad obligatoria** en cada afirmación factual:
-   `‹fuente | acceso | confianza | tipo›` (convención en
-   `references/esquema-analisis.md`). Cita siempre la fuente de los datos
-   externos.
+4. **Trazabilidad atómica obligatoria.** Cada afirmación factual lleva su propia
+   etiqueta `‹fuente | acceso | confianza | tipo›` pegada a la afirmación
+   (convención en `references/esquema-analisis.md`). **Toda cifra, porcentaje,
+   precio o ranking lleva la fuente de ESE dato concreto** — no vale una lista
+   de fuentes agregada al final del bloque para datos cuantitativos: si dices
+   «el 81 % de las clínicas son independientes», esa frase lleva su fuente al
+   lado. Para datos heredados del CKB, usas `ckb: [módulo]` y, si el dato venía
+   de un workshop, indicas si fue validado con el cliente o sigue como
+   hipótesis (no propagues como hecho algo que el CKB no validó).
 5. **Nunca alucines fuentes.** Sin URL real, dato real o respuesta real de un
    motor, no la cites.
 6. **No hagas recomendaciones estratégicas prescriptivas.** Eso es Capa 2. La
@@ -287,8 +317,11 @@ volumen lo justifique.
   contrato del Bloque 8 con los agentes downstream).
 - `references/guia-investigacion.md` — circuito e intensidad de investigación:
   niveles de profundidad y presupuesto, reparto de búsquedas por bloque,
-  secuencia, auditoría de motores generativos y criterios de parada.
+  secuencia, vías de acceso a los motores generativos (Chrome, paste, APIs de
+  grounding, GEO Metrics), métrica de solapamiento y criterios de parada.
 - `references/plantillas-bloques.md` — las plantillas rellenables de los ocho
   bloques y la tabla del Bloque 8.
 - `references/plantilla-input.md` — campos del Paso 0 (toma de datos) y
   parámetros de configuración con sus valores por defecto.
+- `references/plantilla-resumen-pdf.md` — estructura del resumen ejecutivo en
+  PDF (`resumen_ejecutivo.pdf`).

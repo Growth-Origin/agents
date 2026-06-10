@@ -76,10 +76,13 @@ consulta literal.] ‹motor-geo: [motor] | consulta: "..."›
 **Síntesis:** [1 párrafo: qué cita hoy la IA en este nicho y dónde están los huecos]
 
 ### Fuentes citadas hoy por los motores
-| Consulta clave | Motor | Dominios/fuentes citadas | Tipo de página |
-|----------------|-------|--------------------------|----------------|
-|                |       |                          |                |
+| Consulta clave | Motor | Método de acceso | Dominios/fuentes citadas | Tipo de página |
+|----------------|-------|------------------|--------------------------|----------------|
+|                |       | navegador / paste / API / GEO Metrics |              |                |
 ‹motor-geo: [motor] | consulta: "..." | acceso | confianza | tipo›
+
+> Registra qué motores se auditaron y cuáles quedaron pendientes (y por qué:
+> login, sin acceso, etc.). No inventes la respuesta de un motor no auditado.
 
 ### Entidades y marcas que aparecen como respuesta
 [Quién sale citado/recomendado, en qué consultas y en qué posición del
@@ -89,9 +92,11 @@ razonamiento.]
 [Preguntas mal respondidas o sin fuente clara. Cada hueco = oportunidad de
 contenido para el cliente.]
 
-### Solapamiento orgánico Google ↔ fuentes citadas por IA
-[Grado de solapamiento observado y qué implica para la estrategia GEO.
-Confirmar el dato, no asumir el ~20 % de referencia.]
+### Solapamiento orgánico Google ↔ fuentes citadas por IA  (CAMPO OBLIGATORIO)
+[Grado de solapamiento observado y qué implica para la estrategia GEO. Reporta
+una cifra o rango (p. ej. «~X % de las fuentes citadas también estaban en el top
+orgánico de Google»). Confirmar el dato, no asumir el ~20 % de referencia. Si no
+puedes calcularlo, escribe «dato no disponible» — no lo dejes en blanco.]
 
 ### Nota de no-determinación
 [Señalar consultas cuya conclusión depende de una sola respuesta y, donde se

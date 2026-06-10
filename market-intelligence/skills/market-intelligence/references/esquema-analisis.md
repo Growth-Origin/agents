@@ -24,6 +24,7 @@ clientes/[slug-cliente]/
 └── market-intelligence/
     ├── analisis_mercado.md            # Los 8 bloques (documento principal)
     ├── conclusiones_accionables.md    # Bloque 8 standalone (contrato downstream)
+    ├── resumen_ejecutivo.pdf          # Resumen presentable 2-4 págs (ver plantilla-resumen-pdf.md)
     ├── _fuentes/
     │   ├── auditoria_geo.md           # Log de la auditoría de motores generativos
     │   ├── demanda_busqueda.md        # Datos y resultados de demanda/keywords
@@ -85,6 +86,20 @@ Tipos de fuente válidos en este agente:
 
 Regla de oro: sin fuente real, no hay afirmación. Lo no verificable va a
 «dato no disponible», nunca se inventa.
+
+**Trazabilidad atómica, no agregada.** La etiqueta va pegada a cada afirmación
+factual, no en una lista de fuentes al final del bloque. Esto es especialmente
+estricto con **datos cuantitativos** (cifras, porcentajes, precios, rankings,
+recuentos de reseñas): cada uno lleva la fuente de ESE dato. Una lista de 15
+fuentes al pie del bloque no permite saber cuál respalda el «81 %» y cuál el
+«12.000 M€» — y eso, en un sector YMYL, no vale. Puedes añadir además un
+consolidado de fuentes al final, pero no sustituye la etiqueta por dato.
+
+**Cadena de confianza desde el CKB.** Los datos heredados del CKB se etiquetan
+`ckb: [módulo]`. Si un dato del CKB provenía de un workshop con el cliente,
+indicas si fue **validado** o sigue como **hipótesis**: no conviertes en «hecho»
+algo que el CKB dejó sin validar. El análisis es tan fiable como el CKB que
+consume.
 
 ## Mapeo de entradas: del CKB al análisis
 

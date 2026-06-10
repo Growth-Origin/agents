@@ -23,9 +23,14 @@ El operador elige el nivel por cliente. El estándar es `profunda`.
 | `profunda` (estándar)| 30–50           | Exhaustivo por bloque; cliente o sector complejo    |
 
 El número es un **presupuesto orientativo, no una cuota a llenar**: si alcanzas
-saturación de información antes del tope, paras y lo declaras. Si necesitas
-superar el tope para un bloque crítico, lo señalas y pides confirmación al
-analista.
+saturación de información antes del tope, paras y lo declaras.
+
+**Aviso obligatorio al superar el presupuesto.** Si para cubrir un bloque crítico
+necesitas pasar del tope del nivel, **paras, avisas al analista con cuántas
+búsquedas llevas y por qué necesitas más, y esperas su OK** antes de continuar.
+No te pasas del presupuesto en silencio (en un run real es fácil irse de 50 a 75
+sin darte cuenta). El recuento final de búsquedas frente al presupuesto va en
+`audit/execution_log.json`.
 
 ## Reparto de búsquedas por bloque (nivel `profunda`)
 
@@ -80,19 +85,47 @@ Es el bloque diferencial. Procedimiento:
    - **Entidades y marcas** que aparecen en la respuesta.
    - **Huecos de respuesta**: preguntas mal respondidas o sin fuente clara =
      oportunidad directa para el cliente.
-3. Anotas el **grado de solapamiento** entre los resultados orgánicos de Google
-   y las fuentes citadas por la IA. Como referencia del sector, el solapamiento
-   ha caído por debajo del 20 % en muchos nichos, lo que confirma que GEO
-   requiere estrategia propia; **confirma el dato observado, no lo des por
-   sentado.**
+3. Anotas el **grado de solapamiento** (campo OBLIGATORIO del Bloque 2) entre los
+   resultados orgánicos de Google y las fuentes citadas por la IA. Cómo se
+   calcula: para cada consulta clave, miras el top de fuentes citadas por el
+   motor y el top orgánico de Google, y reportas qué proporción coincide (p. ej.
+   «de las fuentes citadas por Perplexity en 10 consultas, ~X % también
+   aparecían en el top 10 orgánico de Google»). Como referencia del sector, el
+   solapamiento ha caído por debajo del 20 % en muchos nichos, lo que confirma
+   que GEO requiere estrategia propia; **confirma el dato observado, no lo des
+   por sentado, y si no puedes calcularlo lo marcas «dato no disponible» en vez
+   de omitirlo.**
 4. **Nota de no-determinación:** las respuestas de los LLMs fluctúan. Cuando una
    conclusión dependa de una sola respuesta, señálalo; cuando puedas, repite la
    consulta y reporta el patrón, no una foto única.
 5. Guardas el log completo en `_fuentes/auditoria_geo.md`.
 
-Si no tienes acceso real a un motor concreto en Nivel 1, lo declaras: marcas ese
-motor como «dato no disponible (requiere acceso al motor)» y no inventas su
-respuesta.
+Si no tienes acceso real a un motor concreto, lo declaras: marcas ese motor como
+«dato no disponible (requiere acceso al motor)» y no inventas su respuesta.
+
+### Vías de acceso a cada motor (cómo conseguir las respuestas)
+
+ChatGPT y Gemini requieren sesión iniciada; no se consultan con una búsqueda web
+anónima. Opciones, de menos a más infraestructura:
+
+| Motor | Nivel 1 (sin coste) | Nivel 2 (API, automatable) |
+|-------|---------------------|----------------------------|
+| **Perplexity** | Búsqueda web / navegador asistido | **Sonar API** (citas nativas) |
+| **ChatGPT** | **Claude in Chrome** sobre tu sesión logueada, o el operador pega las respuestas | **OpenAI Responses API** con la tool `web_search` (devuelve `url_citation`) |
+| **Gemini** | **Claude in Chrome** sobre tu sesión logueada, o el operador pega las respuestas | **Gemini API** con *Grounding with Google Search* (`groundingMetadata` con queries, resultados y citas) |
+| **Google AI Overviews** | Observación directa en SERP (no siempre aparecen en YMYL local ES) | — |
+
+**Patrón oro vs aproximación:** la app de consumo (vía Chrome o paste) es lo que
+ve el cliente final y es el patrón oro para GEO. Las APIs con grounding son una
+**aproximación automatizable y barata** (más que GEO Metrics), útil para
+monitorización a escala, pero su ranking y conjunto de fuentes pueden diferir de
+la app: trátalas como tendencia, no como foto idéntica, y dilo en el informe.
+**GEO Metrics** (Nivel 2+) se sitúa por encima como capa ya gestionada para el
+mercado en español.
+
+Elijas la vía que elijas, **registras en el Bloque 2 con qué método se obtuvo
+cada respuesta** (navegador, paste, API o GEO Metrics), porque cambia la
+fiabilidad de la lectura.
 
 ## Rol del analista (Nivel 1)
 
