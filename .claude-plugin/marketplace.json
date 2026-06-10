@@ -14,6 +14,11 @@
       "name": "ckb-builder",
       "description": "Construye el Client Knowledge Base (CKB) consolidado de un cliente nuevo a partir de la memoria del Pre-Onboarding y una o varias transcripciones de entrevistas, más documentación opcional del cliente, su web y LinkedIn. Produce cinco módulos consolidados, un índice maestro y un guion del workshop de validación. Idioma: español de España.",
       "source": "./ckb-builder"
+    },
+    {
+      "name": "market-intelligence",
+      "description": "Construye un retrato accionable del mercado del cliente para SEO y GEO. Lee el Client Knowledge Base (CKB) del Agente 1.1 y lo enriquece con investigación web propia: demanda y comportamiento de búsqueda, panorama generativo (qué citan ChatGPT, Perplexity, Google AI Overviews y Gemini), estructura de mercado, E-E-A-T del sector, utilidad de contenido, plataformas e influencers. Cierra con conclusiones accionables que sirven de contrato a los agentes downstream (1.2 ICP, Capa 2 estrategia, Capa 3 contenido). Idioma: español de España.",
+      "source": "./market-intelligence"
     }
   ]
 }

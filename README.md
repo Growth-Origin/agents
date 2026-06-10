@@ -25,7 +25,7 @@ Idioma de salida de todos los agentes: **español de España**
 ## Publicar este marketplace (lo hace quien mantiene los plugins)
 
 1. Crear un repositorio en GitHub bajo la cuenta de Growth Origin (por
-   ejemplo `growth-origin/agents`).
+   ejemplo `GrowthOrigin/agents`).
 2. Subir el contenido de esta carpeta tal cual (en la raíz del repo
    deben quedar `.claude-plugin/marketplace.json` y las dos carpetas de
    plugins).
@@ -36,7 +36,7 @@ Idioma de salida de todos los agentes: **español de España**
    git add .
    git commit -m "Marketplace Growth Origin — pre-onboarding-cliente v0.3.0 + ckb-builder v0.1.0"
    git branch -M main
-   git remote add origin https://github.com/growth-origin/agents.git
+   git remote add origin https://github.com/GrowthOrigin/agents.git
    git push -u origin main
    ```
 
@@ -49,14 +49,14 @@ Idioma de salida de todos los agentes: **español de España**
 
 ### En Cowork (la app de escritorio)
 
-`Ajustes → Plugins → Add plugin` y pegar `growth-origin/agents`. Después
+`Ajustes → Plugins → Add plugin` y pegar `GrowthOrigin/agents`. Después
 instalar `pre-onboarding-cliente` y `ckb-builder` por separado desde el
 mismo panel.
 
 ### En Claude Code (terminal)
 
 ```
-/plugin marketplace add growth-origin/agents
+/plugin marketplace add GrowthOrigin/agents
 /plugin install pre-onboarding-cliente@growth-origin
 /plugin install ckb-builder@growth-origin
 ```
