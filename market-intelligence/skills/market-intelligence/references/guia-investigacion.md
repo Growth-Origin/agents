@@ -100,8 +100,13 @@ Es el bloque diferencial. Procedimiento:
    consulta y reporta el patrón, no una foto única.
 5. Guardas el log completo en `_fuentes/auditoria_geo.md`.
 
-Si no tienes acceso real a un motor concreto, lo declaras: marcas ese motor como
-«dato no disponible (requiere acceso al motor)» y no inventas su respuesta.
+**Regla prescriptiva (no silenciar el hueco):** intentas auditar todos los
+motores de `motores_geo`. Para **ChatGPT y Gemini**, que requieren sesión
+iniciada, **por defecto usas Claude in Chrome sobre la sesión logueada del
+operador**. Si te topas con un **muro de login**, **PARAS y pides al operador que
+inicie sesión (o que pegue las respuestas)**, en vez de saltarte el motor en
+silencio. Solo si tras eso sigue sin haber acceso, marcas ese motor como «dato no
+disponible (sin acceso)» y no inventas su respuesta.
 
 ### Vías de acceso a cada motor (cómo conseguir las respuestas)
 

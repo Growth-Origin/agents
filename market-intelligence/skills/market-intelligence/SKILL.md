@@ -159,10 +159,13 @@ elegida y el circuito de `references/guia-investigacion.md`:
    páginas), entidades y marcas que aparecen, **huecos de respuesta**
    (preguntas mal respondidas o sin fuente clara = oportunidad directa) y el
    **grado de solapamiento entre el orgánico de Google y las fuentes citadas
-   por la IA** (campo obligatorio, ver más abajo). Para cada motor que no puedas
-   auditar, declaras la vía que falta (no inventas su respuesta): las opciones de
-   acceso a ChatGPT, Gemini, Perplexity y AI Overviews están en
-   `references/guia-investigacion.md`.
+   por la IA** (campo obligatorio, ver más abajo). **ChatGPT y Gemini requieren
+   sesión iniciada: por defecto los auditas con Claude in Chrome sobre la sesión
+   logueada del operador; si te topas con un muro de login, PARAS y pides al
+   operador que inicie sesión (o que pegue las respuestas), en vez de saltarte el
+   motor en silencio.** Solo si tras eso sigue sin acceso, marcas ese motor como
+   «dato no disponible (sin acceso)». Registras con qué método se obtuvo cada
+   respuesta. Vías y alternativas por API en `references/guia-investigacion.md`.
 3. **Bloque 3 — Estructura del mercado.** Segmentación de la demanda, madurez
    del sector (¿educar o convertir?), estacionalidad, tendencias emergentes.
 4. **Bloque 4 — E-E-A-T del sector.** Qué señala autoridad en este nicho

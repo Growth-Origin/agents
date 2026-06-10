@@ -1,6 +1,6 @@
 {
   "name": "market-intelligence",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Construye un retrato accionable del mercado del cliente, optimizado para SEO y GEO. Lee el Client Knowledge Base (CKB) del Agente 1.1 y lo enriquece con investigación web propia: demanda y comportamiento de búsqueda, panorama generativo (qué citan ChatGPT, Perplexity, Google AI Overviews y Gemini), estructura de mercado, E-E-A-T del sector, utilidad de contenido, plataformas e influencers. Cierra con un bloque de conclusiones accionables que sirve de contrato a los agentes downstream (1.2 ICP, Capa 2 estrategia, Capa 3 contenido). Idioma de salida y de diálogo: español de España (peninsular).",
   "author": {
     "name": "Growth Origin"
