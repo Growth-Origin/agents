@@ -97,6 +97,27 @@ fuentes pueden diferir de la app: trátalas como tendencia, no como foto idénti
 y dilo. **GEO Metrics** se sitúa por encima como capa gestionada para el mercado
 en español.
 
+### Uso de GEO Metrics en el 2.2 (si está conectado)
+
+GEO Metrics acelera y respalda con datos los temas GEO y de keyword:
+
+1. `list_projects` → localiza el proyecto del cliente (y, si existen, de
+   competidores) por dominio/título. Si no hay proyecto, lo dices; no inventas.
+2. **Tema 4.2 (rendimiento generativo):** `get_project_overview` y
+   `get_ranking_prompt_details` → posición, share of voice, dominios citados por
+   proveedor. Los **dominios citados** revelan qué competidores se llevan las
+   citas y en qué prompts.
+3. **Tema 4.3 (opinión de la IA sobre el competidor):** `get_sentiment_extraction`
+   → comparación de tu marca vs competidores por atributo y por modelo de IA, con
+   puntuaciones (0–10), justificaciones y URLs fuente. Es el dato más directo para
+   este tema; complétalo con consultas repetidas a los motores para variabilidad.
+4. **Tema 4.1 (keywords):** `get_keyword_execution` → volumen mensual +
+   `chatbot_preference`. La dificultad y los backlinks siguen siendo Semrush/
+   Ahrefs (Nivel 2+).
+
+Registra `geo-metrics: [tool] | proyecto/prompt/execution` en la trazabilidad.
+Trata las métricas de IA como tendencia (no-determinismo de los LLMs).
+
 ## Criterios de parada
 
 Por tema y competidor, paras cuando se cumple lo primero de:

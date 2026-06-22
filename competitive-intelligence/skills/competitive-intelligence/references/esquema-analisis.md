@@ -26,6 +26,7 @@ clientes/[slug-cliente]/
     ├── sintesis_accionable.md        # Tema 4.11 standalone (contrato downstream)
     ├── resumen_ejecutivo.pdf         # Resumen presentable 2-4 págs (plantilla-resumen-pdf.md)
     ├── _fuentes/
+    │   ├── contexto_normalizado.md   # Contexto del cliente (CKB / análisis 2.1 / paquete externo)
     │   ├── [competidor]_geo.md       # Auditoría generativa: consultas, repeticiones, citas, variabilidad
     │   ├── [competidor]_web.md       # Crawl/lectura: arquitectura, interlinking, E-E-A-T, hacks, CMS, CWV
     │   └── serp_keywords.md          # Observación de SERP y aproximaciones (lo exacto es Nivel 2+)
@@ -83,11 +84,15 @@ conviertas en hecho lo que upstream dejó sin validar.
 Regla de oro: sin fuente real, no hay afirmación. Lo no recuperable va a «dato no
 disponible» o «requiere herramienta (Nivel 2+)», nunca se inventa.
 
-## Inputs: del CKB y del Agente 2.1
+## Inputs: contexto del cliente (3 orígenes) + Agente 2.1
+
+El contexto puede venir del **CKB (1.1)**, de un **análisis previo**, o de un
+**paquete de contexto externo** (docs de otra agencia), que se normaliza a
+`_fuentes/contexto_normalizado.md`. No hay dependencia dura del Agente 1.1.
 
 | Fuente | Uso |
 |--------|-----|
-| CKB — sector, oferta, propuesta de valor | Contexto del cliente y filtro de comparabilidad |
+| Contexto (CKB / 2.1 / paquete externo) — sector, oferta, propuesta de valor | Contexto del cliente y filtro de comparabilidad |
 | CKB — canales y activos actuales | Base para comparar con el competidor |
 | Agente 2.1 — fuentes citadas por IA, E-E-A-T del sector | Evita duplicar; ancla el benchmark E-E-A-T (4.7) |
 | Agente 2.1 — lista nominada de competidores (notas downstream) | Punto de partida de la propuesta del Paso 1 |
@@ -127,10 +132,10 @@ Detalle de campos en `plantillas-temas.md`.
 
 | Tema | Fuente Nivel 1 (sin APIs) | Fuente Nivel 2+ |
 |------|---------------------------|-----------------|
-| 4.1 Keywords/páginas top/gap | Observación de SERP (aprox.) | DataForSEO (exacto) |
+| 4.1 Keywords/páginas top/gap | Observación de SERP (aprox.) · volumen por GEO Metrics | DataForSEO (volumen, dificultad, tráfico exactos) |
 | 4.2 Rendimiento generativo | Consultas directas a motores | GEO Metrics |
 | 4.3 Opinión de la IA | Consultas directas + repeticiones | GEO Metrics |
-| 4.4 Backlinks + link gap | **No disponible** (marcar pendiente) | SE Ranking |
+| 4.4 Backlinks + link gap | **No disponible** (marcar pendiente) | DataForSEO · Semrush / Ahrefs |
 | 4.5 Arquitectura web | Crawl + lectura del agente | DataForSEO (crawl) |
 | 4.6 Interlinking y clusters | Muestreo + análisis del agente | DataForSEO (crawl) |
 | 4.7 E-E-A-T competidor | Lectura de páginas + 2.1 | — |

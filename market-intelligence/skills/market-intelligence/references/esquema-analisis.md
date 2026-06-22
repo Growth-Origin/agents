@@ -1,166 +1,142 @@
-# Esquema del análisis de mercado — Agente 2.1
+# Esquema del análisis de mercado — Agente 2.1 (v0.2)
 
-> Define la estructura del output del Market Intelligence Agent: los ocho
-> bloques, la estructura de carpetas, la convención de trazabilidad, el mapeo de
-> entradas desde el CKB y el contrato del Bloque 8 con los agentes downstream.
-> El esquema es **estable**: las secciones no cambian de cliente a cliente;
-> cambia el contenido.
+> Define los entregables del Market Intelligence Agent, su estructura de carpetas,
+> la convención de trazabilidad, los tres orígenes de contexto y el mapeo a
+> herramientas. El esquema es estable; cambia el contenido, no las secciones.
 
 ## Idioma
 
-Todo el contenido se redacta en **español de España (peninsular)**. Tú
-(singular) y vosotros (plural): tienes, queréis, podéis, dime, mira, fíjate.
+Todo en **español de España (peninsular)**. Tú (singular) y vosotros (plural).
 **Prohibido cualquier argentinismo** (vos, tenés, querés, podés, decime, mirá,
-fijate sin tilde, dale como «ok», armá, pegá, andá, bárbaro, re- como
-intensificador, qué onda, laburo, guita, che). Las citas literales se conservan
-en su idioma original.
+fijate sin tilde, dale como «ok», armá, pegá, andá, bárbaro, re-, qué onda,
+laburo, guita, che). Las citas literales se conservan en su idioma original.
 
 ## Estructura de carpetas del output
-
-Dentro de la carpeta de trabajo, bajo `clientes/[slug-cliente]/`:
 
 ```
 clientes/[slug-cliente]/
 └── market-intelligence/
-    ├── analisis_mercado.md            # Los 8 bloques (documento principal)
-    ├── conclusiones_accionables.md    # Bloque 8 standalone (contrato downstream)
-    ├── resumen_ejecutivo.pdf          # Resumen presentable 2-4 págs (ver plantilla-resumen-pdf.md)
+    ├── analisis_mercado_completo.md   # Doc en bruto extenso: TODO lo analizado (efecto "wow")
+    ├── top5_competidores.md           # Top-5 competidores + highlights (puente al 2.2)
+    ├── eeat_sector.md                 # Elementos E-E-A-T concretos del mercado del cliente
+    ├── top50_preguntas.md             # ~50 preguntas más frecuentes del mercado y país
+    ├── vocabulario_y_comunicacion.md  # Palabras que dan profesionalidad, tono, nivel técnico
+    ├── plataformas_y_contenido.md     # Dónde, qué contenido y qué se premia (con explicación)
+    ├── posicion_e_intensidad.md       # Posición del cliente + benchmark intensidad/dificultad/velocidad del sector
+    ├── conclusiones_accionables.md    # Contrato downstream (cada conclusión con agente destino)
+    ├── resumen_ejecutivo.pdf          # Resumen presentable 2-4 págs
     ├── _fuentes/
-    │   ├── auditoria_geo.md           # Log de la auditoría de motores generativos
-    │   ├── demanda_busqueda.md        # Datos y resultados de demanda/keywords
-    │   ├── citacion_plataformas.md    # Datos de citación por plataforma/canal
-    │   └── influencers.md             # Candidatos localizados y su evidencia
+    │   ├── contexto_normalizado.md    # Ficha de contexto (CKB / análisis previo / paquete externo)
+    │   ├── keywords.md                # Estudio keyword: top keywords, volumen, competencia, criterios
+    │   ├── prompts.md                 # Estudio prompt: buyer personas + prompts + datos GEO Metrics
+    │   ├── auditoria_geo.md           # Panorama generativo: prompts, posición, share of voice, dominios citados
+    │   └── plataformas_citacion.md    # Datos de citación por plataforma/canal
     └── audit/
-        ├── execution_log.json         # Parámetros, búsquedas, ajustes del analista
-        └── sources_accessed.json      # Fuentes accedidas con fecha
+        ├── execution_log.json         # Parámetros, búsquedas vs presupuesto, herramientas usadas
+        └── sources_accessed.json      # Fuentes accedidas con fecha y método
 ```
 
-El documento principal `analisis_mercado.md` lleva una cabecera de metadatos:
+Cabecera de `analisis_mercado_completo.md`:
 
 ```markdown
-# Análisis de mercado — [Nombre Cliente]
-
-**Versión:** 0.1
-**Fecha de la auditoría:** AAAA-MM-DD
-**Sector / vertical:** ...
-**Idioma / geografía del mercado:** ...
+# Análisis de mercado — [Cliente]
+**Versión:** 0.2  ·  **Fecha:** AAAA-MM-DD
+**Origen del contexto:** CKB 1.1 / análisis previo / paquete externo
+**Geografía e idiomas:** ...
 **Profundidad:** ligera | media | profunda
-**Motores generativos auditados:** ...
-**CKB de origen:** ruta y versión del CKB del Agente 1.1 usado como ancla
+**Herramientas conectadas:** GEO Metrics [sí/no] · Semrush/Ahrefs [sí/no]
+**Motores GEO auditados:** ... (método: navegador / Chrome / GEO Metrics)
 ```
 
-Recordatorio de re-ejecución: el panorama generativo y el peso de plataformas
-cambian rápido. El documento lleva fecha y está pensado para re-auditarse
-periódicamente (mensual en Nivel 2). Al re-ejecutar, no se sobrescribe en
-silencio: se versiona.
+## Los tres orígenes de contexto (desacople)
 
-## Estructura interna de cada bloque
+El agente **no depende en duro del Agente 1.1**. El contexto puede venir de:
 
-Cada uno de los bloques 1–7 sigue la misma estructura:
+1. **CKB del Agente 1.1** (`ckb/`) — lo ideal.
+2. **Análisis de mercado previo** — re-ejecución/actualización.
+3. **Paquete de contexto externo** — docs de otra agencia, brief, web. Se
+   normaliza con `plantilla-contexto-externo.md` y se guarda en
+   `_fuentes/contexto_normalizado.md`.
 
-1. **Síntesis** (1 párrafo): lo esencial del bloque, accionable.
-2. **Detalle**: el contenido del bloque con sus campos (ver
-   `plantillas-bloques.md`), en tablas cuando sean datos comparables.
-3. **Evidencia y trazabilidad**: cada afirmación factual con su etiqueta.
-4. **Huecos**: lo marcado como «dato no disponible» y por qué.
+Mapeo contexto → uso (igual sea cual sea el origen):
 
-El Bloque 8 tiene formato propio (tabla de conclusiones → agente destino).
+| Campo de contexto | Uso en el análisis |
+|-------------------|--------------------|
+| Sector y vertical | Acota el universo de investigación |
+| Propuesta de valor / oferta | Mapea la demanda y las keywords semilla |
+| Prioridades de negocio | Criterio nº 1 del módulo keyword |
+| Geografía / idiomas | Acota mercado, país y cluster lingüístico |
+| Voceros | E-E-A-T e influencers |
+| Voz de mercado | Vocabulario real (vocabulario_y_comunicacion) |
+| Canales actuales | Punto de partida de plataformas |
 
-## Convención de trazabilidad
+## Mapeo a herramientas (tool-agnóstico)
 
-Idéntica a la del resto del ecosistema. Cada afirmación factual lleva:
+| Necesidad | Si está conectado | Fallback Nivel 1 |
+|-----------|-------------------|-------------------|
+| Volumen de búsqueda por keyword | **GEO Metrics** `get_keyword_execution` (volumen + chatbot_preference + tendencia 12m) · o **DataForSEO** | Lectura de SERP / autocompletar (aproximación) |
+| Dificultad de keyword | **DataForSEO** · Semrush / Ahrefs | Lectura cualitativa del SERP |
+| Panorama generativo / prompts / share of voice | **GEO Metrics** `list_project_prompts`, `get_ranking_prompt_details`, `get_project_overview` | Consultas directas a motores (Chrome/paste) |
+| Sentiment / comparación con competidores por IA | **GEO Metrics** `get_sentiment_extraction` | Consultas directas + lectura |
+| Backlinks | **DataForSEO** · Semrush / Ahrefs | **No disponible** (marcar Nivel 2+) |
+| Core Web Vitals (si se evalúa) | — | PageSpeed Insights (gratis) |
+
+Si GEO Metrics está conectado pero el cliente **no tiene proyecto**, el agente lo
+dice y propone crearlo, o tira de Nivel 1. Registra siempre qué herramienta dio
+cada dato.
+
+## Convención de trazabilidad (atómica)
+
+Cada afirmación factual lleva, pegada:
 
 `‹fuente: [tipo+ref] | acceso: AAAA-MM-DD | confianza: alta/media-alta/media/baja | tipo: hecho/interpretación/hipótesis›`
 
-Tipos de fuente válidos en este agente:
+Tipos de fuente: `web: [URL]`, `serp: "[consulta]"`, `motor-geo: [motor] | consulta | método`,
+`geo-metrics: [tool] | proyecto/prompt/execution`, `keywords: [herramienta]`,
+`ckb: [módulo]`, `contexto-externo: [doc]`, `pagespeed: [URL]`.
 
-- `web: [URL]` — página, artículo, estudio o dato indexado.
-- `motor-geo: [motor] | consulta: "..."` — respuesta observada en un motor
-  generativo (ChatGPT, Perplexity, Google AI Overviews, Gemini). Anota el motor
-  y la consulta literal.
-- `keywords: [herramienta/fuente]` — datos de volumen, tendencia o
-  estacionalidad.
-- `ckb: [módulo]` — dato heredado del Client Knowledge Base del Agente 1.1.
-- `reseña: [plataforma]` — voz de mercado (anonimizada: rol y contexto, no
-  nombre completo).
+**Atómica, no agregada:** cada cifra/porcentaje/precio/ranking lleva la fuente de
+ESE dato. Una lista al pie del bloque no sustituye la etiqueta por dato. Datos
+heredados de un workshop: marcar validado o hipótesis.
 
-Regla de oro: sin fuente real, no hay afirmación. Lo no verificable va a
-«dato no disponible», nunca se inventa.
+## Los entregables, en detalle
 
-**Trazabilidad atómica, no agregada.** La etiqueta va pegada a cada afirmación
-factual, no en una lista de fuentes al final del bloque. Esto es especialmente
-estricto con **datos cuantitativos** (cifras, porcentajes, precios, rankings,
-recuentos de reseñas): cada uno lleva la fuente de ESE dato. Una lista de 15
-fuentes al pie del bloque no permite saber cuál respalda el «81 %» y cuál el
-«12.000 M€» — y eso, en un sector YMYL, no vale. Puedes añadir además un
-consolidado de fuentes al final, pero no sustituye la etiqueta por dato.
+1. **`analisis_mercado_completo.md`** — todo el análisis por bloques (demanda y
+   búsqueda; panorama generativo; estructura de mercado; E-E-A-T; utilidad de
+   contenido; plataformas; influencers; vocabulario; intensidad del sector) +
+   conclusiones. Es la fuente; los demás entregables son vistas derivadas.
+2. **`top5_competidores.md`** — 5 que mejor posicionan en el nicho + highlights de
+   por qué (visibilidad orgánica, presencia en IA, solapamiento). Puente al 2.2.
+3. **`eeat_sector.md`** — elementos E-E-A-T concretos que premia ESTE mercado, con
+   evidencia (no genéricos). Varían por sector.
+4. **`top50_preguntas.md`** — ~50 preguntas reales del mercado y país objetivo,
+   agrupadas por tema (insumo de contenido y del módulo prompt).
+5. **`vocabulario_y_comunicacion.md`** — léxico que da profesionalidad, tono e
+   identidad comunicativa del sector, nivel técnico esperado, términos a usar y a
+   evitar.
+6. **`plataformas_y_contenido.md`** — plataformas con veredicto entrar/no
+   entrar/vigilar, qué tipo de contenido y qué elementos se premian (búsqueda e
+   IA), con explicación.
+7. **`posicion_e_intensidad.md`** — (a) posición del cliente: keywords donde está
+   y donde no, presencia/ausencia, espacios y oportunidades; (b) **benchmark de
+   intensidad del sector**: dificultad, intensidad y velocidad, y simulación
+   orientativa de intensidad de trabajo para competir (piezas/mes, publicaciones,
+   paid aproximado, dónde). **Benchmark, no plan.**
+8. **`conclusiones_accionables.md`** — cada conclusión, afirmación verificable y
+   autocontenida, con agente destino (ICP 1.2 / Estrategia / Contenido / Voceros /
+   Agente 2.2).
 
-**Cadena de confianza desde el CKB.** Los datos heredados del CKB se etiquetan
-`ckb: [módulo]`. Si un dato del CKB provenía de un workshop con el cliente,
-indicas si fue **validado** o sigue como **hipótesis**: no conviertes en «hecho»
-algo que el CKB dejó sin validar. El análisis es tan fiable como el CKB que
-consume.
+## Contrato del entregable 8 con los downstream
 
-## Mapeo de entradas: del CKB al análisis
+| Conclusión | Agente destino |
+|------------|----------------|
+| Top keywords priorizadas + posición del cliente | Estrategia · Contenido · ICP (1.2) |
+| Top-5 competidores a diseccionar | Agente 2.2 |
+| Elementos E-E-A-T concretos del sector | Contenido · ICP (1.2) |
+| Top-50 preguntas / huecos de respuesta GEO | Contenido (Capa 3) |
+| Vocabulario y línea de comunicación | Contenido · Voceros |
+| Veredicto de plataformas y formatos premiados | Estrategia · Voceros |
+| Benchmark de intensidad/velocidad del sector | Estrategia (Capa 2) |
+| Segmentos de demanda prioritarios | ICP (1.2) |
 
-El agente **no parte de cero**. Lee del CKB del Agente 1.1 y lo enriquece:
-
-| Fuente en el CKB                   | Módulo CKB                | Uso en el análisis                                  |
-|------------------------------------|---------------------------|-----------------------------------------------------|
-| Sector y vertical                  | Identidad y negocio       | Acota el universo de investigación                  |
-| Propuesta de valor                 | Propuesta de valor        | Define qué problema resuelve el cliente             |
-| Productos / servicios (oferta)     | Propuesta de valor        | Mapea la demanda a buscar                           |
-| Voceros identificados              | Activos, expertise, voceros | Base para E-E-A-T (Bloque 4) e influencers (Bloque 7) |
-| Voz de mercado (reviews, jerga)    | Voz, tono y lenguaje      | Vocabulario real de la audiencia (Bloque 1)         |
-| Canales actuales del cliente       | Activos, expertise, voceros | Punto de partida para plataformas (Bloque 6)       |
-
-Si el cliente no pasó por el CKB Builder, se acuerda con el operador un pase
-mínimo de contexto antes de investigar. No se inventa el contexto.
-
-## Los ocho bloques (resumen)
-
-Bloques **descriptivos** (1–7) y **capa accionable** (8):
-
-1. **Demanda y comportamiento de búsqueda** — volumen y tipo de demanda;
-   taxonomía de intenciones (informacional / comparativa / transaccional /
-   navegacional); vocabulario real; query fan-out; preguntas frecuentes.
-2. **Panorama generativo (GEO)** — fuentes citadas hoy por los motores;
-   entidades y marcas que aparecen; huecos de respuesta; grado de solapamiento
-   entre orgánico de Google y fuentes citadas por IA.
-3. **Estructura del mercado** — segmentación de la demanda; madurez (educar vs
-   convertir); estacionalidad; tendencias emergentes.
-4. **E-E-A-T del sector** — qué señala autoridad en este nicho concreto:
-   Experiencia, Expertise, Autoridad de entidad (cadenas `sameAs`), Confianza;
-   medios y blogs más citados por la IA. Lista priorizada y concreta.
-5. **Utilidad de contenido** — qué hace útil al contenido para usuario y para
-   IA, como patrón del contenido que ya triunfa en el sector.
-6. **Plataformas y canales** — veredicto entrar / no entrar / vigilar por
-   plataforma y por canal propio nuevo, con datos de citación del sector.
-7. **Influencers del sector** — veredicto sobre la palanca + lista corta de
-   candidatos accesibles con autoridad temática.
-8. **Conclusiones accionables (capa puente)** — ver contrato abajo.
-
-El detalle de campos de cada bloque está en `plantillas-bloques.md`.
-
-## Contrato del Bloque 8 con los agentes downstream
-
-El Bloque 8 es la sección que los agentes downstream consumen primero. Es
-concisa, priorizada y **explícita sobre a qué agente sirve cada conclusión**.
-Cada conclusión es una afirmación verificable y autocontenida (no una
-observación vaga).
-
-| Conclusión accionable                                          | Agente destino                          |
-|----------------------------------------------------------------|-----------------------------------------|
-| Medios y blogs prioritarios para menciones/enlaces             | Estrategia (Capa 2) · Contenido (Capa 3)|
-| Elementos E-E-A-T concretos que el sector premia               | Contenido (Capa 3) · ICP (1.2)          |
-| Patrones de utilidad de contenido del sector (usuario + IA)    | Contenido (Capa 3)                      |
-| Huecos de respuesta GEO sin cubrir                             | Contenido (Capa 3)                      |
-| Formatos de contenido más citados en el nicho                  | Contenido (Capa 3)                      |
-| Veredicto de plataformas: dónde estar y qué canal propio abrir | Estrategia (Capa 2) · Voceros           |
-| Veredicto de influencers + lista de candidatos accesibles      | Estrategia (Capa 2)                     |
-| Preguntas de alta intención sin respuesta autoritativa         | Estrategia · Contenido                  |
-| Segmentos de demanda prioritarios                              | ICP (1.2)                               |
-| Estacionalidad para el calendario                              | Estrategia (Capa 2)                     |
-
-Cada fila del Bloque 8 debe poder leerse sin abrir el resto del documento: el
-downstream tiene que poder actuar solo con esa línea.
+Cada fila se lee sin abrir el resto del documento.

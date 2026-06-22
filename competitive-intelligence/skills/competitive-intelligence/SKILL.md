@@ -64,33 +64,52 @@ Tabla de equivalencias para no dudar:
 Las citas literales (respuestas textuales de un motor, copy del competidor) se
 conservan en su idioma original; lo que tú añades alrededor va en peninsular.
 
-## Alcance Nivel 1 — qué haces sin APIs de pago y qué marcas como pendiente
+## Herramientas y alcance — detección y fallback (tool-agnóstico)
 
-Arrancas en **Nivel 1** (búsqueda web + navegador + lectura de páginas públicas,
-sin APIs de pago). En este nivel:
+Antes de diseccionar, **detectas qué hay conectado** y lo usas; si no, caes a
+Nivel 1 sin romperte:
 
-**Lo haces tú directamente (cobertura buena):**
+- **GEO Metrics** (conector MCP): si está, es tu fuente primaria para el lado GEO
+  y para volúmenes de keyword. Cubre:
+  - **Rendimiento generativo (4.2):** `get_ranking_prompt_details`,
+    `get_project_overview` (posición, share of voice, dominios citados por
+    proveedor).
+  - **Opinión de la IA sobre el competidor (4.3):** `get_sentiment_extraction`
+    compara tu marca vs competidores por atributo y por modelo de IA — encaja
+    directo con este tema.
+  - **Volúmenes de keyword (4.1):** `get_keyword_execution` (volumen mensual +
+    `chatbot_preference` + tendencia 12m).
+  - Localiza el proyecto del competidor/cliente con `list_projects`; si no existe,
+    lo dices y propones crearlo. Uso en `references/guia-investigacion.md`.
+- **DataForSEO** (conector MCP, si está): keywords con volumen y dificultad, datos
+  de SERP/posiciones y **backlinks/link gap (4.4)** — el hueco que GEO Metrics no
+  cubre. Es **de pago por uso** (ver guardarraíl de coste abajo).
+- **Semrush / Ahrefs** (conector MCP, si están): alternativa para dificultad de
+  keyword y backlinks.
+- **Nivel 1 siempre:** búsqueda web, navegador (Claude in Chrome), lectura de
+  páginas, PageSpeed Insights.
 
-- **Propuesta y selección de competidores** del nicho.
-- **Rendimiento generativo (tema 4.2)** y **opinión de las IAs sobre el
-  competidor (tema 4.3)** — consultando los motores directamente, con
-  repeticiones (ver más abajo).
-- **Arquitectura web (4.5)**, **interlinking y clusters (4.6)** — leyendo el
-  sitio del competidor (sitemap + fetch + muestreo).
-- **E-E-A-T del competidor (4.7)**, **hacks de utilidad (4.8)**, **personalidad
-  comunicativa (4.9)**.
-- **CMS / stack / schema (4.10)** — detectables leyendo el HTML y las cabeceras —
-  y **Core Web Vitals** vía **PageSpeed Insights (gratuito)**.
+**Guardarraíl de coste (DataForSEO / pago por uso).** GEO Metrics es de solo
+lectura y no cobra por consulta; **DataForSEO sí cobra por llamada**. Con
+DataForSEO conectado: agrupa consultas en lotes, ciñe el volumen al presupuesto
+del nivel, y **antes de una tirada grande** (keywords/backlinks de varios
+competidores) **avisa al operador con una estimación y espera su OK**. No dispares
+consultas de pago en masa sin confirmación.
 
-**Lo marcas como «requiere herramienta (Nivel 2+)» — no lo inventes:**
+**Lo que se hace siempre en Nivel 1 (sin herramienta de pago):**
+propuesta y selección de competidores; arquitectura web (4.5); interlinking y
+clusters (4.6); E-E-A-T (4.7); hacks de utilidad (4.8); personalidad comunicativa
+(4.9); CMS/stack/schema + Core Web Vitals vía PageSpeed (4.10).
 
-- **Volúmenes, posiciones y tráfico exactos de keywords + keyword gap
-  cuantitativo (tema 4.1)** → requiere DataForSEO. Puedes aproximar observando el
-  SERP, declarándolo como aproximación.
-- **Perfil de backlinks y link gap (tema 4.4)** → requiere SE Ranking. No hay
-  sustituto público fiable: lo dejas marcado, no lo aproximes a ojo.
-- **Site audit técnico profundo (parte de 4.10)** y **monitorización GEO a
-  escala** → requieren herramienta (SE Ranking / GEO Metrics).
+**Lo que se marca «requiere herramienta (Nivel 2+)» si no hay conector — no lo
+inventes:**
+
+- **Backlinks y link gap (4.4)** → DataForSEO o Semrush/Ahrefs. Sin ninguno
+  conectado, sin sustituto público fiable: marcado, no aproximado a ojo.
+- **Dificultad de keyword y tráfico exactos (parte de 4.1)** → DataForSEO o
+  Semrush/Ahrefs (los volúmenes sí los da GEO Metrics; la dificultad y el tráfico
+  estimado, no). Sin ellos, aproximas competencia por lectura de SERP, declarándolo.
+- **Site audit técnico profundo (parte de 4.10)** → SE Ranking/Semrush.
 
 Nunca rellenas un dato duro con conocimiento genérico. O lo recuperas de una
 fuente real, o lo marcas como pendiente de herramienta. El Nivel 2 (Python + n8n
@@ -125,7 +144,27 @@ Estructura completa de salida en `references/esquema-analisis.md`.
 El agente conduce; el analista co-pilota. No fusiones pasos: cada uno valida el
 anterior.
 
-### Paso 0 — Toma de datos
+### Paso 0 — Nivel de investigación (PREGUNTAR SIEMPRE, antes que nada)
+
+Lo primero, antes de pedir datos o proponer competidores, preguntas al operador
+qué **nivel de investigación** quiere y esperas su respuesta:
+
+- **Nivel 1 — sin herramientas externas.** Solo capacidades de Claude + búsqueda
+  web + Claude in Chrome (motores con login). Coste cero. Los datos duros
+  (volúmenes, dificultad, **backlinks/link gap**, tráfico) se aproximan o se
+  marcan «requiere herramienta (Nivel 2+)».
+- **Nivel 2 — con herramientas externas.** Desbloquea los datos duros. Preguntas
+  cuáles usar: **solo DataForSEO**, **solo Semrush**, o **ambos** (mejor para
+  triangular). Para el link gap, Semrush añade el filtrado por categoría/país.
+  ⚠️ **Aviso de coste:** el Nivel 2 usa herramientas que **consumen créditos / son
+  de pago por uso** (DataForSEO y/o Semrush; GEO Metrics según el plan — sus
+  lecturas por conector no gastan, pero crear proyectos o ejecuciones sí). Antes
+  de cualquier tirada grande, das una estimación y esperas confirmación.
+
+Registras la elección (nivel + herramientas) en el `audit` y la respetas: **en
+Nivel 1 no llamas a ninguna herramienta externa aunque esté conectada.**
+
+### Paso 0.b — Toma de datos y enfoque
 
 Recoges del operador, en un solo paso, los datos y los parámetros de enfoque
 (detalle en `references/parametros-enfoque.md`):
@@ -133,11 +172,16 @@ Recoges del operador, en un solo paso, los datos y los parámetros de enfoque
 Obligatorios:
 
 - `slug_cliente`.
-- `ckb_cliente`: ruta a la carpeta `ckb/` del cliente (Agente 1.1).
-- `analisis_mercado`: ruta al output del Agente 2.1 del cliente. Si no existe,
-  lo señalas: el 2.2 rinde mucho más anclado en el 2.1 (E-E-A-T del sector,
-  fuentes citadas por IA). Acuerdas con el operador seguir sin él o ejecutarlo
-  antes.
+- `contexto_cliente`: el contexto del cliente, de UNO de estos orígenes
+  (cualquiera vale, no dependes en duro del Agente 1.1): (a) el **CKB** (`ckb/`);
+  (b) el **análisis de mercado del Agente 2.1**; (c) un **paquete de contexto
+  externo** (docs de otra agencia, brief, web) que **lees y normalizas** a los
+  campos que necesitas (sector, oferta, propuesta de valor, voceros, geografía,
+  prioridades), guardándolo en `_fuentes/contexto_normalizado.md`. Si nada cubre
+  algo crítico, lo preguntas; no inventas.
+- `analisis_mercado` (recomendado si existe): el output del Agente 2.1 ancla el
+  benchmark (E-E-A-T del sector, fuentes citadas por IA, top-5 nominado). Si no
+  está, rindes igual pero menos calibrado: lo señalas y propones ejecutarlo antes.
 - **Parámetros de enfoque** que acotan el universo competitivo: `sector_nicho`,
   `modelo` (B2B / B2C / B2B2C), `geografia`, `caracteristicas` (gama de precio,
   vertical, tamaño), `tipo_competidor` (directo / indirecto / aspiracional).

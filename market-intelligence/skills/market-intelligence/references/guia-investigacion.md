@@ -164,3 +164,102 @@ medida por plataforma), tienes dos opciones, en este orden:
 
 Nunca inventes la cifra. El Nivel 2 desbloquea estos datos por API (datos de
 keywords, citación IA) con re-auditoría mensual automatizada vía n8n.
+
+---
+
+## Módulo keyword (estudio de keywords del proyecto)
+
+Produce la lista priorizada de **top keywords** del proyecto cruzando **tres
+criterios**, en este orden:
+
+1. **Prioridades de negocio del cliente en su geografía.** De qué vive y qué
+   quiere vender, en qué país/idioma. Es el filtro maestro: una keyword con
+   mucho volumen pero ajena a la prioridad de negocio no es «top».
+2. **Nivel de búsqueda y nivel de competencia.** Volumen y demanda real, y cuánto
+   cuesta competir:
+   - **Volumen:** si GEO Metrics está conectado, `get_keyword_execution` da
+     volumen mensual real + tendencia de 12 meses + **`chatbot_preference`** (0–1,
+     si la gente prefiere preguntar a la IA o buscar en Google — clave para
+     decidir SEO vs GEO por keyword). Si no, se aproxima por SERP/autocompletar.
+   - **Competencia/dificultad:** DataForSEO o Semrush/Ahrefs si están; si no,
+     lectura cualitativa del SERP (quién domina, agregadores, fuerza de los
+     dominios).
+
+   > **Coste:** GEO Metrics es de solo lectura (sin coste por consulta);
+   > **DataForSEO cobra por llamada**. Con DataForSEO conectado, agrupa en lotes,
+   > respeta el presupuesto del nivel y **pide OK al operador antes de tiradas
+   > grandes** (decenas de keywords, backlinks de varios dominios).
+3. **Lo observado de competencia y mercado.** Keywords donde los competidores son
+   fuertes, huecos sin cubrir, y términos que emergen del análisis de mercado.
+
+Salida en `_fuentes/keywords.md` y, priorizada, en `posicion_e_intensidad.md`:
+tabla con keyword, volumen, chatbot_preference, competencia/dificultad,
+prioridad de negocio (alta/media/baja) y veredicto (atacar / vigilar / descartar).
+Cada cifra con su fuente. Lo no disponible, marcado.
+
+## Módulo prompt (estudio de prompts del proyecto)
+
+Fusiona **dos vías** y las combina en un único listado de prompts:
+
+**Vía A — GEO Metrics (si está conectado).** Sacas los prompts ya configurados y
+sus métricas: `list_project_prompts` (ranking + accuracy prompts), 
+`get_ranking_prompt_details` (posición, share of voice, dominios citados, por
+proveedor) y `get_sentiment_extraction` (comparación con competidores por modelo
+de IA). Esto te da prompts reales y su rendimiento.
+
+**Vía B — Buyer personas (el método del operador).** Cuando GEO Metrics no cubra
+todo o para enriquecer:
+
+1. Generas **5 buyer personas** del proyecto a partir del contexto (sector,
+   oferta, ICP si existe; si no, las construyes con criterio y lo declaras).
+2. **Fuerzas a cada persona a conversar con la IA** sobre el proyecto/su problema:
+   simulas la conversación que tendría ese perfil (dudas, objeciones, comparación,
+   decisión).
+3. De esas conversaciones **extraes el listado de prompts** reales que ese perfil
+   usaría en un motor generativo.
+
+**Fusión:** combinas los prompts de la Vía A y la Vía B, deduplicas, y los cruzas
+con las **top-50 preguntas** del mercado (entregable 4). Resultado:
+`_fuentes/prompts.md` con el listado unificado, etiquetando el origen de cada
+prompt (GEO Metrics / persona / pregunta de mercado) y, donde haya datos, su
+rendimiento.
+
+> Nota: las 5 buyer personas del módulo prompt son **de trabajo**, para generar
+> prompts; NO son la definición de ICP (eso es el Agente 1.2). No produzcas un
+> entregable «ICP».
+
+## Uso de GEO Metrics (resumen operativo)
+
+1. `list_projects` → localiza el proyecto del cliente (por dominio/título). Si no
+   existe, dilo y propón crearlo; no inventes datos.
+2. `get_project_overview` → métricas agregadas (avg_position, share of voice,
+   citaciones, accuracy_rate) para el panorama generativo.
+3. `list_project_prompts` + `get_ranking_prompt_details` → prompts y su
+   rendimiento por proveedor; dominios citados (insumo de competidores y huecos).
+4. `get_keyword_execution` (vía `list_keyword_executions`) → volúmenes y chatbot
+   preference para el módulo keyword.
+5. `get_sentiment_extraction` (vía `list_sentiment_extractions`) → comparación
+   con competidores por atributo y por modelo de IA (insumo de top-5 competidores
+   y de posición del cliente).
+
+Trata las métricas de IA como **tendencia, no foto fija** (no-determinismo de los
+LLMs). Registra siempre `geo-metrics: [tool] | proyecto/prompt` en la
+trazabilidad.
+
+## Benchmark de intensidad del sector (entregable 7, parte b)
+
+A partir de la competencia observada y de los datos de visibilidad, estimas a qué
+ritmo juega el sector y qué haría falta para competir. Es **benchmark
+descriptivo, no plan** (el plan es de Capa 2). Estima, con la evidencia que
+tengas y declarando lo aproximado:
+
+- **Dificultad:** fuerza de los dominios que dominan, saturación del SERP,
+  presencia de agregadores y cadenas.
+- **Intensidad:** frecuencia de publicación de los líderes, profundidad de las
+  piezas, refresco de contenido, peso aparente de paid.
+- **Velocidad:** cada cuánto se mueve el panorama (cambios de ranking, contenido
+  nuevo), cuánto tarda en notarse el trabajo.
+- **Simulación orientativa:** un rango de intensidad de trabajo para competir
+  (p. ej. «X piezas/mes, Y publicaciones, presencia en estas plataformas, paid
+  orientativo en…»), siempre etiquetado como **orientativo, a dimensionar por
+  Estrategia**. No es un plan cerrado ni un presupuesto.

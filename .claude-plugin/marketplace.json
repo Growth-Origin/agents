@@ -17,12 +17,12 @@
     },
     {
       "name": "market-intelligence",
-      "description": "Construye un retrato accionable del mercado del cliente para SEO y GEO. Lee el Client Knowledge Base (CKB) del Agente 1.1 y lo enriquece con investigación web propia: demanda y comportamiento de búsqueda, panorama generativo (qué citan ChatGPT, Perplexity, Google AI Overviews y Gemini), estructura de mercado, E-E-A-T del sector, utilidad de contenido, plataformas e influencers. Cierra con conclusiones accionables que sirven de contrato a los agentes downstream (1.2 ICP, Capa 2 estrategia, Capa 3 contenido). Idioma: español de España.",
+      "description": "Retrato accionable y profundo del mercado del cliente para SEO y GEO. Parte del CKB, de un análisis previo o de un paquete de contexto externo, y lo enriquece con investigación web, GEO Metrics y estudio de keywords y prompts. Produce doc extenso, top-5 competidores, E-E-A-T, top-50 preguntas, vocabulario, plataformas, posición del cliente con benchmark de intensidad y conclusiones. Idioma: español de España.",
       "source": "./market-intelligence"
     },
     {
       "name": "competitive-intelligence",
-      "description": "Hace ingeniería inversa de los competidores que mejor posicionan en el nicho del cliente para extraer palancas accionables de SEO y GEO. Lee el CKB del Agente 1.1 y los outputs del Agente 2.1 (Mercado), propone los competidores a analizar y los disecciona en once temas (búsqueda, generativo, opinión de las IAs, backlinks, arquitectura, interlinking, E-E-A-T, hacks de utilidad, personalidad, CMS/código/UX) en formato insight-implicación-acción, y cierra con una síntesis accionable por agente destino. Arranca en Nivel 1 sin APIs de pago. Idioma: español de España.",
+      "description": "Ingeniería inversa de los competidores que mejor posicionan en el nicho del cliente, para extraer palancas de SEO y GEO. Parte del CKB, del Agente 2.1 o de contexto externo, propone competidores y los disecciona en once temas (búsqueda, generativo, opinión de las IAs, backlinks, arquitectura, E-E-A-T, hacks, CMS/UX) en formato insight-implicación-acción. Usa GEO Metrics si está conectado. Idioma: español de España.",
       "source": "./competitive-intelligence"
     }
   ]

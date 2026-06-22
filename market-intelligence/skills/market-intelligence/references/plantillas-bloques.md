@@ -1,12 +1,27 @@
-# Plantillas de los ocho bloques — Market Intelligence (Agente 2.1)
+# Plantillas — Market Intelligence (Agente 2.1)
 
-Plantillas listas para rellenar del documento `analisis_mercado.md`. Las usas
-literalmente en el Paso 3 (síntesis). Todas siguen la estructura interna estándar
-de `esquema-analisis.md`: Síntesis + Detalle (tablas para lo comparable) +
-Evidencia/trazabilidad + Huecos. Idioma: español de España (peninsular).
+Plantillas listas para rellenar. Las usas en el Paso 3 (síntesis). Idioma:
+español de España (peninsular). Cada afirmación factual lleva su etiqueta de
+trazabilidad atómica: `‹fuente | acceso: AAAA-MM-DD | confianza | tipo›`.
 
-Cada afirmación factual lleva su etiqueta de trazabilidad:
-`‹fuente | acceso: AAAA-MM-DD | confianza | tipo›`.
+**Dos niveles de salida:**
+
+- Los **bloques de abajo** son la estructura interna del documento extenso
+  `analisis_mercado_completo.md` (el doc «wow» con todo).
+- De ese documento se **derivan los entregables standalone**. Mapeo:
+
+  | Entregable | Se nutre de los bloques |
+  |------------|--------------------------|
+  | `top5_competidores.md` | 2 (panorama) + 6 (plataformas) + observación de SERP |
+  | `eeat_sector.md` | Bloque 4 |
+  | `top50_preguntas.md` | Bloque 1 (preguntas) + módulo prompt |
+  | `vocabulario_y_comunicacion.md` | Bloque 1 (vocabulario) + 5 |
+  | `plataformas_y_contenido.md` | Bloques 5 y 6 |
+  | `posicion_e_intensidad.md` | Bloques 1/2 (keywords) + 3 + benchmark de intensidad |
+  | `conclusiones_accionables.md` | Bloque 8 |
+
+  Las plantillas de los entregables que no son 1:1 con un bloque están al final
+  del archivo, en «Plantillas de entregables derivados».
 
 ---
 
@@ -255,3 +270,70 @@ agente destino.
 
 Si una fila no aplica al cliente, se elimina (no se rellena con humo). Si
 emerge una conclusión nueva relevante, se añade con su agente destino.
+
+---
+
+# Plantillas de entregables derivados
+
+## `top5_competidores.md`
+
+~~~markdown
+# Top-5 competidores — [Cliente]
+
+> Los 5 que mejor posicionan en el nicho objetivo. NO es disección (eso es el
+> Agente 2.2); es la nominación con el porqué.
+
+| # | Competidor | Tipo (directo/indirecto/aspiracional) | Por qué está en el top-5 (highlights) | Señal |
+|---|------------|----------------------------------------|----------------------------------------|-------|
+| 1 |            |                                        | [visibilidad orgánica / presencia en IA / solapamiento] | ‹fuente›|
+
+**Para el Agente 2.2:** lista nominada lista para diseccionar, con el parámetro
+de enfoque por el que entra cada uno.
+~~~
+
+## `top50_preguntas.md`
+
+~~~markdown
+# Top-50 preguntas del mercado — [Cliente] · [país]
+
+Agrupadas por tema. Origen: búsqueda/SERP, módulo prompt (buyer personas) y GEO
+Metrics. Insumo directo para contenido (FAQPage) y para el módulo prompt.
+
+## [Tema 1]
+1. [pregunta real] ‹fuente | ...›
+...
+~~~
+
+## `vocabulario_y_comunicacion.md`
+
+~~~markdown
+# Vocabulario y línea de comunicación del sector — [Cliente]
+
+- **Palabras que dan profesionalidad:** [términos del sector que generan confianza]
+- **Términos a evitar / que restan:** ...
+- **Tono e identidad comunicativa del sector:** [cercano/técnico/institucional…]
+- **Nivel técnico esperado:** [plano divulgativo vs técnico, con ejemplos]
+- **Léxico por idioma/geografía** (si aplica): ...
+‹fuente: reseñas / contenido que rankea / contexto | ...›
+~~~
+
+## `posicion_e_intensidad.md`
+
+~~~markdown
+# Posición del cliente e intensidad del sector — [Cliente]
+
+## a) Posición del cliente
+- **Keywords donde está** (y posición aprox.): tabla con keyword, volumen, dónde aparece.
+- **Keywords donde NO está** (oportunidad): ...
+- **Presencia en IA:** dónde lo citan / dónde no.
+- **Espacios y oportunidades a ocupar:** huecos concretos.
+‹fuente | ...›
+
+## b) Benchmark de intensidad del sector  (BENCHMARK, NO PLAN)
+- **Dificultad:** fuerza de los dominios líderes, saturación, agregadores.
+- **Intensidad:** frecuencia de publicación de los líderes, profundidad, refresco, peso de paid.
+- **Velocidad:** cada cuánto se mueve el panorama y cuánto tarda en notarse el trabajo.
+- **Simulación orientativa de intensidad de trabajo:** rango de piezas/mes,
+  publicaciones, plataformas y paid orientativo para competir.
+  > Orientativo, a dimensionar por la Capa 2 (Estrategia). No es plan ni presupuesto.
+~~~

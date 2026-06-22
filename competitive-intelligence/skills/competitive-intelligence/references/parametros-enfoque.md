@@ -8,8 +8,17 @@ competidores. Idioma del diálogo: español de España (peninsular).
 | Campo | Descripción |
 |-------|-------------|
 | `slug_cliente` | Identificador del cliente (kebab-case). |
-| `ckb_cliente` | Ruta a la carpeta `ckb/` del cliente (Agente 1.1). |
-| `analisis_mercado` | Ruta al output del Agente 2.1 del cliente. Si no existe, se señala: el 2.2 rinde mucho más anclado en el 2.1. Acordar con el operador seguir sin él o ejecutarlo antes. |
+| `contexto_cliente` | Contexto del cliente, de UNO de estos orígenes (cualquiera vale, no dependes en duro del Agente 1.1): (a) **CKB** (`ckb/`); (b) **análisis del Agente 2.1**; (c) **paquete de contexto externo** (docs de otra agencia, brief, web). El externo se **lee y normaliza** a los campos necesarios (sector, oferta, propuesta de valor, voceros, geografía, prioridades) y se guarda en `_fuentes/contexto_normalizado.md`. Si falta algo crítico, se pregunta; no se inventa. |
+| `analisis_mercado` | Recomendado si existe: ancla el benchmark (E-E-A-T del sector, fuentes citadas por IA, top-5 nominado). Si no está, el 2.2 rinde igual pero menos calibrado; se señala y se propone ejecutarlo antes. |
+
+### Paquete de contexto externo (desacople)
+
+Cuando el cliente viene de otra agencia y no hay CKB ni 2.1: el agente lee los
+documentos que aporte el operador (onboarding, brief, web, deck) y rellena una
+**ficha de contexto normalizado** con su origen citado
+(`‹contexto-externo: [doc] | ...›`), guardada en `_fuentes/contexto_normalizado.md`.
+Mantiene el hilo del ecosistema sin dependencia dura; el material sin fuente se
+trata como hipótesis, no como hecho.
 
 ## Parámetros de enfoque (acotan el universo competitivo)
 
