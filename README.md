@@ -21,9 +21,14 @@ conocimiento del cliente.
   de los competidores que mejor posicionan, diseccionados en once temas
   (formato insight→implicación→acción), con síntesis accionable y
   resumen ejecutivo en PDF.
+- **icp-definer** (v0.1.0) — Agente 3: define el Cliente Ideal accionable
+  (ICP + buyer persona + JTBD + capa GEO/SEO con firma de prompt) más la
+  persona negativa, la matriz persona×etapa×intención y el filtro
+  anti-persona. Humano-en-el-bucle, con selector de nivel de
+  investigación y estimación de coste en Nivel 2.
 
-Próximos agentes del ecosistema (por construir): 1.2 ICP Definition,
-1.4 Search & Prompt Landscape.
+Próximos agentes del ecosistema (por construir): 1.4 Search & Prompt
+Landscape.
 
 Idioma de salida de todos los agentes: **español de España**
 (peninsular). Sin argentinismos.
@@ -59,8 +64,8 @@ Idioma de salida de todos los agentes: **español de España**
 
 `Ajustes → Plugins → Add plugin` y pegar `Growth-Origin/agents`. Después
 instalar los plugins que se necesiten (`pre-onboarding-cliente`,
-`ckb-builder`, `market-intelligence`, `competitive-intelligence`) por
-separado desde el mismo panel.
+`ckb-builder`, `market-intelligence`, `competitive-intelligence`,
+`icp-definer`) por separado desde el mismo panel.
 
 ### En Claude Code (terminal)
 
@@ -70,6 +75,7 @@ separado desde el mismo panel.
 /plugin install ckb-builder@growth-origin
 /plugin install market-intelligence@growth-origin
 /plugin install competitive-intelligence@growth-origin
+/plugin install icp-definer@growth-origin
 ```
 
 ---
@@ -83,6 +89,7 @@ Cada persona corre la actualización cuando quiera:
 /plugin update ckb-builder
 /plugin update market-intelligence
 /plugin update competitive-intelligence
+/plugin update icp-definer
 ```
 
 La actualización es manual por defecto: no se cambia nada en la máquina
@@ -121,7 +128,10 @@ growth-origin-agents/
 ├── market-intelligence/        # plugin 3 (Agente 2.1)
 │   ├── .claude-plugin/plugin.json
 │   └── skills/market-intelligence/
-└── competitive-intelligence/   # plugin 4 (Agente 2.2)
+├── competitive-intelligence/   # plugin 4 (Agente 2.2)
+│   ├── .claude-plugin/plugin.json
+│   └── skills/competitive-intelligence/
+└── icp-definer/                # plugin 5 (Agente 3)
     ├── .claude-plugin/plugin.json
-    └── skills/competitive-intelligence/
+    └── skills/icp-definer/
 ```

@@ -24,6 +24,11 @@
       "name": "competitive-intelligence",
       "description": "Ingeniería inversa de los competidores que mejor posicionan en el nicho del cliente, para extraer palancas de SEO y GEO. Parte del CKB, del Agente 2.1 o de contexto externo, propone competidores y los disecciona en once temas (búsqueda, generativo, opinión de las IAs, backlinks, arquitectura, E-E-A-T, hacks, CMS/UX) en formato insight-implicación-acción. Usa GEO Metrics si está conectado. Idioma: español de España.",
       "source": "./competitive-intelligence"
+    },
+    {
+      "name": "icp-definer",
+      "description": "Define el Cliente Ideal (ICP) accionable de un cliente para SEO y GEO. Parte del CKB, del Agente 2.1, del 2.2 o de un paquete de contexto externo y sintetiza el conjunto mínimo de perfiles (ICP + buyer persona + JTBD + capa GEO/SEO con firma de prompt) más la persona negativa, la matriz persona-etapa-intención y el filtro anti-persona. Humano-en-el-bucle. Dos niveles con estimación de coste. Idioma: español de España.",
+      "source": "./icp-definer"
     }
   ]
 }
