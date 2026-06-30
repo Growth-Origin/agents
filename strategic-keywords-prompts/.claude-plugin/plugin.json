@@ -1,0 +1,19 @@
+{
+  "name": "strategic-keywords-prompts",
+  "version": "0.1.0",
+  "description": "Agente 4, agente bisagra de la Capa de Estrategia. Cruza el conocimiento de cliente, ICP, mercado y competidores con datos duros de busqueda (DataForSEO) y de IA (GEO Metrics) para entregar un universo priorizado de keywords y prompts, con scoring transparente (KPS y PPS), filtro anti-persona como exclusion dura, fusion por tema (doble victoria, SEO-led, GEO-led, latente) y un esbozo de priorizacion. Dos niveles de investigacion con estimacion de coste. Idioma espanol de Espana.",
+  "author": {
+    "name": "Growth Origin"
+  },
+  "keywords": [
+    "strategic-keywords-prompts",
+    "keywords",
+    "prompts",
+    "seo",
+    "geo",
+    "generative-engine-optimization",
+    "strategy",
+    "marketing",
+    "agency"
+  ]
+}

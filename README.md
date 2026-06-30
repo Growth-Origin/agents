@@ -26,9 +26,15 @@ conocimiento del cliente.
   persona negativa, la matriz persona×etapa×intención y el filtro
   anti-persona. Humano-en-el-bucle, con selector de nivel de
   investigación y estimación de coste en Nivel 2.
+- **strategic-keywords-prompts** (v0.1.0) — Agente 4: primer agente de la
+  Capa de Estrategia. Cruza el conocimiento de la Capa 1 con datos de
+  búsqueda (DataForSEO) y de IA (GEO Metrics) y entrega un universo
+  priorizado de keywords y prompts (scoring KPS/PPS, filtro anti-persona,
+  fusión topic-led y esbozo de priorización) en un Excel de 4 pestañas.
+  Selector de nivel de investigación con estimación de coste en Nivel 2.
 
-Próximos agentes del ecosistema (por construir): 1.4 Search & Prompt
-Landscape.
+Próximos agentes del ecosistema (por construir): Contenido/Arquitectura
+(Capa 3), 1.4 Search & Prompt Landscape.
 
 Idioma de salida de todos los agentes: **español de España**
 (peninsular). Sin argentinismos.
@@ -65,7 +71,8 @@ Idioma de salida de todos los agentes: **español de España**
 `Ajustes → Plugins → Add plugin` y pegar `Growth-Origin/agents`. Después
 instalar los plugins que se necesiten (`pre-onboarding-cliente`,
 `ckb-builder`, `market-intelligence`, `competitive-intelligence`,
-`icp-definer`) por separado desde el mismo panel.
+`icp-definer`, `strategic-keywords-prompts`) por separado desde el mismo
+panel.
 
 ### En Claude Code (terminal)
 
@@ -76,6 +83,7 @@ instalar los plugins que se necesiten (`pre-onboarding-cliente`,
 /plugin install market-intelligence@growth-origin
 /plugin install competitive-intelligence@growth-origin
 /plugin install icp-definer@growth-origin
+/plugin install strategic-keywords-prompts@growth-origin
 ```
 
 ---
@@ -90,6 +98,7 @@ Cada persona corre la actualización cuando quiera:
 /plugin update market-intelligence
 /plugin update competitive-intelligence
 /plugin update icp-definer
+/plugin update strategic-keywords-prompts
 ```
 
 La actualización es manual por defecto: no se cambia nada en la máquina
@@ -131,7 +140,10 @@ growth-origin-agents/
 ├── competitive-intelligence/   # plugin 4 (Agente 2.2)
 │   ├── .claude-plugin/plugin.json
 │   └── skills/competitive-intelligence/
-└── icp-definer/                # plugin 5 (Agente 3)
+├── icp-definer/                # plugin 5 (Agente 3)
+│   ├── .claude-plugin/plugin.json
+│   └── skills/icp-definer/
+└── strategic-keywords-prompts/ # plugin 6 (Agente 4)
     ├── .claude-plugin/plugin.json
-    └── skills/icp-definer/
+    └── skills/strategic-keywords-prompts/
 ```

@@ -29,6 +29,11 @@
       "name": "icp-definer",
       "description": "Define el Cliente Ideal (ICP) accionable de un cliente para SEO y GEO. Parte del CKB, del Agente 2.1, del 2.2 o de un paquete de contexto externo y sintetiza el conjunto mínimo de perfiles (ICP + buyer persona + JTBD + capa GEO/SEO con firma de prompt) más la persona negativa, la matriz persona-etapa-intención y el filtro anti-persona. Humano-en-el-bucle. Dos niveles con estimación de coste. Idioma: español de España.",
       "source": "./icp-definer"
+    },
+    {
+      "name": "strategic-keywords-prompts",
+      "description": "Agente 4, primer agente de la Capa de Estrategia. Cruza el conocimiento de cliente, ICP, mercado y competidores con datos duros de búsqueda (DataForSEO) y de IA (GEO Metrics) para entregar un universo priorizado de keywords y prompts, con scoring transparente (KPS y PPS), filtro anti-persona como exclusión dura, fusión por tema (doble victoria / SEO-led / GEO-led / latente) y un esbozo de priorización. Dos niveles con estimación de coste. Idioma: español de España.",
+      "source": "./strategic-keywords-prompts"
     }
   ]
 }
