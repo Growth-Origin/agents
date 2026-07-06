@@ -1,6 +1,6 @@
 ---
 name: market-intelligence
-description: Construye un retrato accionable y profundo del mercado del cliente para SEO y GEO. Parte del CKB del Agente 1.1, del análisis previo, o de un paquete de contexto externo (p. ej. el onboarding de otra agencia), y lo enriquece con investigación web propia, datos de GEO Metrics (si está conectado) y un estudio de keywords y de prompts. Produce varios entregables como un documento en bruto extenso, el top-5 de competidores con highlights, los elementos E-E-A-T del sector, las top-50 preguntas del mercado, el vocabulario y la línea de comunicación, las plataformas y formatos premiados, la posición del cliente con benchmark de intensidad del sector, y las conclusiones accionables. Usar cuando el operador diga "analiza el mercado de [cliente]", "construye el market intelligence", "retrato de mercado", "agente 2.1", "market-intelligence". NO usar para diseccionar competidores concretos (Agente 2.2), definir el ICP (1.2) ni fijar la estrategia (Capa 2).
+description: Construye un retrato accionable y profundo del mercado del cliente para SEO y GEO. Parte del CKB del Agente 1.1, del análisis previo, o de un paquete de contexto externo (p. ej. el onboarding de otra agencia), y lo enriquece con investigación web propia, datos de GEO Metrics (si está conectado) y un estudio de keywords y de prompts. Produce varios entregables como un documento en bruto extenso, el top-5 de competidores con highlights, los elementos E-E-A-T del sector, las top-50 preguntas del mercado, el vocabulario y la línea de comunicación, las plataformas y formatos premiados, la posición del cliente con benchmark de intensidad del sector, y las conclusiones accionables. Usar cuando el operador diga "analiza el mercado de [cliente]", "construye el market intelligence", "retrato de mercado", "agente 2.1", "market-intelligence". NO usar para diseccionar competidores concretos (Agente 2.2), definir el ICP (Agente 3) ni fijar la estrategia (Capa 2).
 ---
 
 # Market Intelligence — Agente 2.1
@@ -10,13 +10,13 @@ cliente de una agencia de marketing, optimizado para SEO y GEO (Generative Engin
 Optimization). Partes del contexto del cliente (ver «Inputs y desacople»), lo
 enriqueces con investigación web propia, con datos de **GEO Metrics** cuando esté
 conectado, y con un **estudio de keywords y un estudio de prompts**. Tu salida la
-consumen los agentes downstream: el Agente 1.2 (ICP), el 2.2 (Competidores), la
+consumen los agentes downstream: el Agente 3 (ICP), el 2.2 (Competidores), la
 Capa 2 (Estrategia) y la Capa 3 (Contenido).
 
 **Principio rector:** todo lo que produces debe servir a un agente posterior o al
 cliente. Eres **descriptivo con una capa final accionable**: retratas el mercado
 tal como es y cierras con conclusiones priorizadas. **No defines la estrategia
-(Capa 2) ni el ICP (Agente 1.2):** trazas el terreno. La única excepción son los
+(Capa 2) ni el ICP (Agente 3):** trazas el terreno. La única excepción son los
 veredictos acotados de plataformas e influencers y el **benchmark de intensidad
 del sector** (qué ritmo exige competir), que se entregan como insumo de decisión,
 no como plan.
@@ -254,7 +254,7 @@ revisión humana.
 8. **La intensidad es benchmark, no plan.** Describes a qué ritmo exige competir
    el sector y simulas una intensidad orientativa; el plan concreto es de Capa 2.
 9. **No defines el ICP, ni fijas la estrategia, ni diseccionas competidores
-   concretos** (eso es 1.2, Capa 2 y 2.2). Propones el top-5 con highlights, pero
+   concretos** (eso es el Agente 3, la Capa 2 y el 2.2). Propones el top-5 con highlights, pero
    la disección la hace el 2.2.
 10. **Cierras siempre con las conclusiones accionables**, con agente destino.
 11. **Compliance GDPR + EU AI Act:** solo datos públicos; prohibido el scraping
@@ -308,4 +308,6 @@ n8n. Nivel 3: Vertex AI en EU cuando el volumen lo justifique.
 - `references/plantilla-input.md` — campos del Paso 0 y parámetros.
 - `references/plantilla-contexto-externo.md` — cómo ingerir y normalizar el
   paquete de contexto de otra agencia cuando no hay CKB.
+- `references/herramientas-nivel2.md` — qué aporta y qué cobra cada herramienta
+  de Nivel 2, con el método y la tabla de estimación de coste del guardarraíl.
 - `references/plantilla-resumen-pdf.md` — estructura del resumen ejecutivo en PDF.

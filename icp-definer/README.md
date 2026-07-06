@@ -65,7 +65,7 @@ Todo bajo `clientes/[slug-cliente]/icp/`:
 
 ## Lo que NO hace
 
-No hace el retrato de mercado (eso es el 2.1), no diseccciona competidores concretos (el
+No hace el retrato de mercado (eso es el 2.1), no disecciona competidores concretos (el
 2.2), ni fija la estrategia o el plan de contenidos (Capas 2 y 3). Si se le pide, lo
 deriva.
 

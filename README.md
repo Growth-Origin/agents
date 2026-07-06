@@ -6,22 +6,22 @@ conocimiento del cliente.
 
 ## Plugins incluidos
 
-- **pre-onboarding-cliente** (v0.3.0) — prepara la primera reunión de
-  onboarding de un cliente nuevo con investigación de marketing 360 y
-  cuatro entregables (memoria, guion de entrevista, resumen ejecutivo
-  y pedido de documentación).
-- **ckb-builder** (v0.2.1) — Agente 1.1: construye el Client Knowledge
+- **pre-onboarding-cliente** (v0.4.0) — Agente 1.0: prepara la primera
+  reunión de onboarding de un cliente nuevo con investigación de
+  marketing 360 y cuatro entregables (memoria, guion de entrevista,
+  resumen ejecutivo y pedido de documentación).
+- **ckb-builder** (v0.3.0) — Agente 1.1: construye el Client Knowledge
   Base consolidado del cliente tras el onboarding: cinco módulos
   consolidados, índice maestro y guion del workshop de validación.
-- **market-intelligence** (v0.4.0) — Agente 2.1: retrato accionable del
+- **market-intelligence** (v0.4.1) — Agente 2.1: retrato accionable del
   mercado del cliente para SEO y GEO en ocho bloques (con selector de
-  nivel de profundidad), más conclusiones accionables y resumen
+  nivel de investigación), más conclusiones accionables y resumen
   ejecutivo en PDF.
-- **competitive-intelligence** (v0.4.0) — Agente 2.2: ingeniería inversa
+- **competitive-intelligence** (v0.4.1) — Agente 2.2: ingeniería inversa
   de los competidores que mejor posicionan, diseccionados en once temas
   (formato insight→implicación→acción), con síntesis accionable y
   resumen ejecutivo en PDF.
-- **icp-definer** (v0.1.0) — Agente 3: define el Cliente Ideal accionable
+- **icp-definer** (v0.1.1) — Agente 3: define el Cliente Ideal accionable
   (ICP + buyer persona + JTBD + capa GEO/SEO con firma de prompt) más la
   persona negativa, la matriz persona×etapa×intención y el filtro
   anti-persona. Humano-en-el-bucle, con selector de nivel de
@@ -53,7 +53,7 @@ Idioma de salida de todos los agentes: **español de España**
    cd "growth-origin-agents"
    git init
    git add .
-   git commit -m "Marketplace Growth Origin — pre-onboarding-cliente v0.3.0 + ckb-builder v0.1.0"
+   git commit -m "Marketplace Growth Origin — los seis agentes"
    git branch -M main
    git remote add origin https://github.com/Growth-Origin/agents.git
    git push -u origin main
@@ -109,8 +109,9 @@ de nadie sin que lo pida.
 ## Publicar una versión nueva (mantenimiento)
 
 1. Editar los archivos del plugin afectado dentro de su carpeta
-   (`pre-onboarding-cliente/`, `ckb-builder/`, `market-intelligence/` o
-   `competitive-intelligence/`).
+   (`pre-onboarding-cliente/`, `ckb-builder/`, `market-intelligence/`,
+   `competitive-intelligence/`, `icp-definer/` o
+   `strategic-keywords-prompts/`).
 2. Subir el número de versión en su `.claude-plugin/plugin.json`
    (por ejemplo `0.3.0` → `0.4.0`).
 3. Commit y push al repo.
@@ -133,17 +134,22 @@ growth-origin-agents/
 │   └── skills/pre-onboarding-cliente/
 ├── ckb-builder/                # plugin 2 (Agente 1.1)
 │   ├── .claude-plugin/plugin.json
+│   ├── README.md
 │   └── skills/ckb-builder/
 ├── market-intelligence/        # plugin 3 (Agente 2.1)
 │   ├── .claude-plugin/plugin.json
+│   ├── README.md
 │   └── skills/market-intelligence/
 ├── competitive-intelligence/   # plugin 4 (Agente 2.2)
 │   ├── .claude-plugin/plugin.json
+│   ├── README.md
 │   └── skills/competitive-intelligence/
 ├── icp-definer/                # plugin 5 (Agente 3)
 │   ├── .claude-plugin/plugin.json
+│   ├── README.md
 │   └── skills/icp-definer/
 └── strategic-keywords-prompts/ # plugin 6 (Agente 4)
     ├── .claude-plugin/plugin.json
+    ├── README.md
     └── skills/strategic-keywords-prompts/
 ```

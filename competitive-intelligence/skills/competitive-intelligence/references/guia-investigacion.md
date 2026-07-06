@@ -82,7 +82,7 @@ anónima. Por defecto:
 | **Gemini** | **Claude in Chrome sobre tu sesión logueada** (por defecto); o el operador pega las respuestas | Gemini API con *Grounding with Google Search* (`groundingMetadata`) |
 | **Google AI Overviews** | Observación directa en SERP | — |
 
-**Regla prescriptiva (no silenciar el hueco):** intentas auditar los tres
+**Regla prescriptiva (no silenciar el hueco):** intentas auditar los cuatro
 motores. Para ChatGPT y Gemini, **por defecto usas Claude in Chrome** sobre la
 sesión del operador. Si te topas con un **muro de login**, **PARAS y pides al
 operador que inicie sesión (o que pegue las respuestas)**; no te saltas el motor

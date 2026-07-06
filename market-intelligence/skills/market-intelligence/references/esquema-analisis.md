@@ -1,4 +1,4 @@
-# Esquema del análisis de mercado — Agente 2.1 (v0.2)
+# Esquema del análisis de mercado — Agente 2.1
 
 > Define los entregables del Market Intelligence Agent, su estructura de carpetas,
 > la convención de trazabilidad, los tres orígenes de contexto y el mapeo a
@@ -44,7 +44,8 @@ Cabecera de `analisis_mercado_completo.md`:
 **Origen del contexto:** CKB 1.1 / análisis previo / paquete externo
 **Geografía e idiomas:** ...
 **Profundidad:** ligera | media | profunda
-**Herramientas conectadas:** GEO Metrics [sí/no] · Semrush/Ahrefs [sí/no]
+**Nivel de investigación:** 1 (sin herramientas) | 2 (con: DataForSEO · Semrush · ambos)
+**Herramientas conectadas:** GEO Metrics [sí/no] · DataForSEO [sí/no] · Semrush/Ahrefs [sí/no]
 **Motores GEO auditados:** ... (método: navegador / Chrome / GEO Metrics)
 ```
 
@@ -123,20 +124,20 @@ heredados de un workshop: marcar validado o hipótesis.
    orientativa de intensidad de trabajo para competir (piezas/mes, publicaciones,
    paid aproximado, dónde). **Benchmark, no plan.**
 8. **`conclusiones_accionables.md`** — cada conclusión, afirmación verificable y
-   autocontenida, con agente destino (ICP 1.2 / Estrategia / Contenido / Voceros /
+   autocontenida, con agente destino (ICP Agente 3 / Estrategia / Contenido / Voceros /
    Agente 2.2).
 
 ## Contrato del entregable 8 con los downstream
 
 | Conclusión | Agente destino |
 |------------|----------------|
-| Top keywords priorizadas + posición del cliente | Estrategia · Contenido · ICP (1.2) |
+| Top keywords priorizadas + posición del cliente | Estrategia · Contenido · ICP (Agente 3) |
 | Top-5 competidores a diseccionar | Agente 2.2 |
-| Elementos E-E-A-T concretos del sector | Contenido · ICP (1.2) |
+| Elementos E-E-A-T concretos del sector | Contenido · ICP (Agente 3) |
 | Top-50 preguntas / huecos de respuesta GEO | Contenido (Capa 3) |
 | Vocabulario y línea de comunicación | Contenido · Voceros |
 | Veredicto de plataformas y formatos premiados | Estrategia · Voceros |
 | Benchmark de intensidad/velocidad del sector | Estrategia (Capa 2) |
-| Segmentos de demanda prioritarios | ICP (1.2) |
+| Segmentos de demanda prioritarios | ICP (Agente 3) |
 
 Cada fila se lee sin abrir el resto del documento.

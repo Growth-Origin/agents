@@ -1,17 +1,18 @@
 # Plantillas de entregables (Paso 2)
 
-Con el documento de hallazgos, producí los 4 entregables. No resumas: cruzá y
-contrastá. El entregable 1 (memoria) usa el esquema de `esquema-memoria.md`.
+Con el documento de hallazgos, produce los 4 entregables. No resumas: cruza y
+contrasta. El entregable 1 (memoria) usa el esquema de `esquema-memoria.md`.
 
 ---
 
 ## Entregable 1 — Archivo de memoria del cliente
 
-Rellená completo el esquema de `esquema-memoria.md`, seccion por seccion, con la
+Rellena completo el esquema de `esquema-memoria.md`, seccion por seccion, con la
 convencion de trazabilidad. Las secciones 9-12 (hipotesis, incongruencias,
 diferenciales/oportunidades, riesgos) son el corazon: ahi va tu valor cruzando
 la version oficial con la realidad. La seccion 13 (huecos) debe quedar lista
-para alimentar el Entregable 4. Guardá como `memoria_[slug-cliente].md`.
+para alimentar el Entregable 4. Guarda como
+`clientes/[slug-cliente]/memoria_[slug-cliente].md`.
 
 ---
 
@@ -23,14 +24,14 @@ siempre se usa + modulos que el consultor activa segun quien este en la sala.
 ```
 # Guion entrevista de onboarding — [Cliente]
 **Duracion orientativa:** [segun modulos]
-**Como usar:** usá el NUCLEO siempre; sumá modulos segun las personas presentes.
+**Como usar:** usa el NUCLEO siempre; suma modulos segun las personas presentes.
 
 ## Contexto previo (no compartir con el cliente)
 [3-5 parrafos: que sabemos, hipotesis centrales, gaps detectados]
 
 ## Apertura (5 min) — texto sugerido
-["Ya lei tu web, tus redes, las resenas y la prensa; quiero ir directo a lo
-que no me cierra..."]
+["Ya he leido tu web, tus redes, las resenas y la prensa; quiero ir directo a
+lo que no me cuadra..."]
 
 ## NUCLEO — Decisor / founder (siempre)
 [6-8 preguntas afiladas con texto literal + ramas de profundizacion
@@ -70,7 +71,7 @@ Una sola hoja. Denso pero legible.
 **A quien entrevistamos:** [personas + rol]
 **Por que nos contacto / contexto:** [1-2 frases, del input del operador]
 
-## Las 3 cosas que NO podes no saber
+## Las 3 cosas que NO puedes no saber
 [3 hallazgos clave, una linea cada uno]
 
 ## Hipotesis estrategica central
@@ -130,5 +131,6 @@ Hola [contacto],
 - No inventes datos fuera de los hallazgos. Lo que falte va a "huecos".
 - Toda hipotesis e incongruencia se justifica citando los hallazgos.
 - Mejor pocas hipotesis solidas que muchas especulativas.
-- Marcá siempre que es hecho, que es interpretacion y que es hipotesis.
-- Guardá los 4 archivos en la carpeta `[slug-cliente]/`.
+- Marca siempre que es hecho, que es interpretacion y que es hipotesis.
+- Guarda los 4 archivos segun la estructura del SKILL: la memoria en
+  `clientes/[slug-cliente]/` y el resto en `clientes/[slug-cliente]/pre-onboarding/`.

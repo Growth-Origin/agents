@@ -35,6 +35,7 @@ trazabilidad atómica: `‹fuente | acceso: AAAA-MM-DD | confianza | tipo›`.
 **Sector / vertical:** ...
 **Idioma / geografía del mercado:** ...
 **Profundidad:** ligera | media | profunda
+**Nivel de investigación:** 1 (sin herramientas) | 2 (herramientas: ...)
 **Motores generativos auditados:** ...
 **CKB de origen:** [ruta y versión del CKB del Agente 1.1]
 
@@ -128,7 +129,7 @@ haya repetido, el patrón observado.]
 **Síntesis:** [1 párrafo]
 
 ### Segmentación de la demanda
-[Cómo se divide la demanda. Insumo para el ICP (1.2), sin definirlo.]
+[Cómo se divide la demanda. Insumo para el ICP (Agente 3), sin definirlo.]
 
 ### Madurez del sector
 [¿Hay que educar o convertir? Implicaciones para el tipo de contenido.]
@@ -257,14 +258,14 @@ agente destino.
 | Conclusión accionable (afirmación autocontenida y verificable) | Agente destino |
 |----------------------------------------------------------------|----------------|
 | [Medios y blogs prioritarios para menciones/enlaces]           | Estrategia (Capa 2) · Contenido (Capa 3) |
-| [Elementos E-E-A-T concretos que el sector premia]             | Contenido (Capa 3) · ICP (1.2) |
+| [Elementos E-E-A-T concretos que el sector premia]             | Contenido (Capa 3) · ICP (Agente 3) |
 | [Patrones de utilidad de contenido del sector]                 | Contenido (Capa 3) |
 | [Huecos de respuesta GEO sin cubrir]                           | Contenido (Capa 3) |
 | [Formatos de contenido más citados en el nicho]                | Contenido (Capa 3) |
 | [Veredicto de plataformas: dónde estar y qué canal propio abrir]| Estrategia (Capa 2) · Voceros |
 | [Veredicto de influencers + lista de candidatos accesibles]    | Estrategia (Capa 2) |
 | [Preguntas de alta intención sin respuesta autoritativa]       | Estrategia · Contenido |
-| [Segmentos de demanda prioritarios]                            | ICP (1.2) |
+| [Segmentos de demanda prioritarios]                            | ICP (Agente 3) |
 | [Estacionalidad para el calendario]                            | Estrategia (Capa 2) |
 ~~~
 

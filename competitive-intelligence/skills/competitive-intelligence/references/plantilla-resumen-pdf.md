@@ -29,7 +29,7 @@ avisa.
 
 1. **Portada / cabecera** — «Análisis competitivo — [Cliente]», subtítulo
    «Resumen ejecutivo · SEO/GEO». Metadatos compactos: fecha, parámetros de
-   enfoque, competidores analizados, nivel de implementación (1), motores GEO
+   enfoque, competidores analizados, nivel de investigación (1/2), motores GEO
    auditados (con método), versión, «borrador pendiente de revisión humana».
 
 2. **Síntesis ejecutiva** (1 párrafo): las palancas competitivas más valiosas que
@@ -42,7 +42,7 @@ avisa.
    hallazgos más accionables (insight→acción condensado).
 
 5. **Síntesis accionable agregada** — tabla compacta de conclusiones por agente
-   destino (Estrategia / Contenido / ICP 1.2), con las prioritarias. Marca las
+   destino (Estrategia / Contenido / ICP Agente 3), con las prioritarias. Marca las
    que dependen de Nivel 2+.
 
 6. **Huecos y nivel** — qué quedó «requiere herramienta (Nivel 2+)» (backlinks,

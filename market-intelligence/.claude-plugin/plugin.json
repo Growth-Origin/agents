@@ -1,6 +1,6 @@
 {
   "name": "market-intelligence",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Retrato accionable y profundo del mercado del cliente para SEO y GEO. Parte del CKB del Agente 1.1, de un analisis previo o de un paquete de contexto externo, y lo enriquece con investigacion web, GEO Metrics (si esta conectado) y estudio de keywords y prompts. Produce doc extenso, top-5 competidores, E-E-A-T del sector, top-50 preguntas, vocabulario, plataformas, posicion del cliente con benchmark de intensidad, y conclusiones accionables. Idioma: espanol de Espana.",
   "author": {
     "name": "Growth Origin"

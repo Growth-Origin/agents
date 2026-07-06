@@ -92,7 +92,7 @@ A continuación, cinco secciones fijas en este orden:
 4. **Hipótesis abiertas**. Cosas no validadas al 100% que conviene
    confirmar en el workshop con el cliente.
 5. **Notas para agentes downstream**. Avisos concretos para los agentes
-   que consuman este módulo. Ejemplo: "Para el Agente 1.2 (ICP): valida
+   que consuman este módulo. Ejemplo: "Para el Agente 3 (ICP): valida
    X, Y y Z antes de cerrar el ICP".
 
 ## Los cinco módulos consolidados (versión 0.1)
@@ -162,8 +162,8 @@ Consolida del documento de referencia del agente los módulos 01 (negocio),
   geografías. **PROHIBICIÓN ESTRICTA:** este apartado recoge evidencia.
   NO define el ICP, NO produce un archivo de ICP, NO crea una carpeta
   `icp/`, NO genera una tabla de «los N ICPs del cliente». La definición
-  y la nomenclatura del ICP son trabajo exclusivo del Agente 1.2 (ICP
-  Definition). Lo que recoges aquí es el input que el Agente 1.2 leerá.
+  y la nomenclatura del ICP son trabajo exclusivo del Agente 3 (ICP
+  Definer). Lo que recoges aquí es el input que el Agente 3 leerá.
 - 1.4 Objetivos declarados y métricas — qué objetivos de negocio comunica
   el cliente y qué métricas dice mirar (crecimiento, retención,
   expansión geográfica, etc.).
@@ -265,10 +265,10 @@ aproximado:
 | §2 Personas clave                     | Módulo 5 (5.4, 5.5)                             |
 | §3 Posicionamiento / propuesta oficial| Módulo 2 (2.1, 2.2); §3.2 → Módulo 1 (1.3)      |
 | §4 Marca y mensaje                    | Módulo 3 (3.1, 3.2, 3.3)                        |
-| §5 Canales y presencia digital        | Módulo 5 (5.4); Módulo 3 (3.4); input futuro 1.4|
+| §5 Canales y presencia digital        | Módulo 5 (5.4); Módulo 3 (3.4); input del Agente 4|
 | §6 Voz real del mercado               | Módulo 2 (2.3); Módulo 4 (4.1, 4.2)             |
 | §7 Footprint del equipo               | Módulo 5 (5.4, 5.5)                             |
-| §8 Nicho y competidores               | Módulo 1 (1.5) + input futuro 1.3               |
+| §8 Nicho y competidores               | Módulo 1 (1.5) + input de los Agentes 2.1/2.2               |
 | §9 Hipótesis a validar                | Hipótesis abiertas en cada módulo               |
 | §10 Incongruencias                    | Módulo 2 (2.5)                                  |
 | §11 Diferenciales no explotados       | Módulo 2 (2.4)                                  |
@@ -287,7 +287,7 @@ agente recoge ese material internamente como paso previo.
 - Para tareas concretas, cargar solo los módulos relevantes (típicamente
   2–3). Ejemplos:
   - Redacción de blog post BOFU sobre una objeción → módulos 3, 4 y 5.
-  - Definición del ICP (futuro Agente 1.2) → módulos 1, 2 y 4 (en
+  - Definición del ICP (Agente 3) → módulos 1, 2 y 4 (en
     particular 4.1).
   - Estrategia editorial → módulos 2, 3 y 5.
 - Si un agente downstream necesita más, mejor cargar el módulo entero que
@@ -354,4 +354,11 @@ clientes/[slug-cliente]/
 │       ├── web/
 │       ├── linkedin_corporate/
 │       ├── linkedin_voceros/
-│       └─
+│       └── apariciones_externas/
+├── workshop_validacion/
+│   ├── guion_workshop.md
+│   └── decisiones_pendientes.md
+└── audit/
+    ├── execution_log.json
+    └── sources_accessed.json
+```

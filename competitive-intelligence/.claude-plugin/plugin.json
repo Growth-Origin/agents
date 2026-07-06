@@ -1,6 +1,6 @@
 {
   "name": "competitive-intelligence",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Ingenieria inversa de los competidores que mejor posicionan en el nicho del cliente, para extraer palancas accionables de SEO y GEO. Parte del CKB, del Agente 2.1 o de un paquete de contexto externo, propone los competidores y los disecciona en once temas (busqueda, generativo, opinion de las IAs, backlinks, arquitectura, interlinking, E-E-A-T, hacks, personalidad, CMS/UX) en formato insight-implicacion-accion. Usa GEO Metrics si esta conectado. Idioma: espanol de Espana.",
   "author": {
     "name": "Growth Origin"

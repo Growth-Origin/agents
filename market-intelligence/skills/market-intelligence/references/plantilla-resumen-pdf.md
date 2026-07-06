@@ -50,13 +50,13 @@ pendiente; no lo des por hecho.
    corazón del valor del agente; merece destaque.
 
 6. **Conclusiones accionables por agente destino** — tabla compacta:
-   cuántas conclusiones por destino (ICP 1.2 / Estrategia / Contenido / Voceros)
+   cuántas conclusiones por destino (ICP Agente 3 / Estrategia / Contenido / Voceros)
    y las 2–3 prioritarias de cada uno. El detalle completo, en
    `conclusiones_accionables.md`.
 
 7. **Limitaciones y próximos pasos** — motores no auditados, datos «no
    disponibles», y el siguiente paso natural (p. ej. Agente 2.2 con la lista
-   nominada de competidores, o refinamiento del ICP en el 1.2).
+   nominada de competidores, o refinamiento del ICP con el Agente 3).
 
 8. **Pie** — «Análisis detallado, fuentes y trazabilidad completas en
    `analisis_mercado_completo.md`. Re-auditoría sugerida: trimestral.»

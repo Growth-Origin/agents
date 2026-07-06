@@ -124,8 +124,8 @@ necesiten referencia ligera].
 > **PROHIBICIÓN ESTRICTA:** este apartado recoge evidencia. NO definas el
 > ICP, NO produzcas un archivo de ICP, NO crees una carpeta `icp/`, NO
 > generes una tabla de «los N ICPs del cliente». La definición y la
-> nomenclatura del ICP son trabajo exclusivo del Agente 1.2 (ICP
-> Definition). Lo que recoges aquí es input directo para el Agente 1.2.
+> nomenclatura del ICP son trabajo exclusivo del Agente 3 (ICP
+> Definer). Lo que recoges aquí es input directo para el Agente 3.
 
 - Sectores donde vende hoy [con fuente: deck, casos, web].
 - Tamaños de empresa típicos [con fuente].
@@ -162,9 +162,9 @@ interacciones].
 
 ## Notas para agentes downstream
 
-- Para el Agente 1.2 (ICP): la evidencia bruta del apartado 1.3 es input
+- Para el Agente 3 (ICP): la evidencia bruta del apartado 1.3 es input
   directo; valida X, Y y Z con el cliente antes de cerrar el ICP.
-- Para el Agente 1.3 (Mercado y competencia): los mercados objetivo del
+- Para los Agentes 2.1 y 2.2 (mercado y competencia): los mercados objetivo del
   apartado 1.1 y la fase del 1.5 condicionan el alcance competitivo.
 - Para los agentes de producción de contenido: los objetivos del 1.4
   determinan la priorización editorial.
@@ -501,4 +501,9 @@ Por cada vocero confirmado, repite la siguiente estructura:
 - Para los agentes de producción de contenido: este módulo es el motor
   del E-E-A-T y los contenidos firmados; siempre cargarlo cuando se
   vayan a firmar piezas con un miembro del equipo del cliente.
-- Para el Agente de GEO: los datos
+- Para el Agente de GEO: los datos publicables del apartado 5.1 son
+  potenciales fuentes citables por LLMs; prioriza los que tengan
+  metodología clara y métricas absolutas.
+- Para el Agente de outreach o de medios: las apariciones externas del
+  apartado 5.5 son la red de contactos efectiva.
+~~~

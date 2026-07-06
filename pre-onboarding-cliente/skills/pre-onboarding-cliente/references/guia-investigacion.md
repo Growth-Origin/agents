@@ -4,16 +4,16 @@ Lentes de investigacion para el Paso 1. Objetivo: un pantallazo completo de
 marketing del cliente, no solo SEO/GEO. Profundidad media: lo suficiente para
 preparar una gran primera reunion, no un audit exhaustivo.
 
-> Antes de empezar: confirmá identidades (checkpoint del SKILL.md). Toda
+> Antes de empezar: confirma identidades (checkpoint del SKILL.md). Toda
 > afirmacion con su etiqueta de trazabilidad. Lo no verificable va a "huecos".
 
 ## Lente 1 — Identidad y posicionamiento (web oficial)
 
-Recorré home, producto/funcionalidades, pricing, "About"/equipo,
+Recorre home, producto/funcionalidades, pricing, "About"/equipo,
 "Customers"/casos, "Industries", y paginas legales (Privacy, Terms, DPA, Cookies
 — revelan subprocesadores, jurisdicciones, partners).
 
-Extraé: propuesta de valor y diferenciales declarados (cita literal), ICP
+Extrae: propuesta de valor y diferenciales declarados (cita literal), ICP
 declarado, producto/integraciones/pricing, social proof oficial.
 
 ## Lente 2 — Marca y mensaje
@@ -26,12 +26,12 @@ declarado, producto/integraciones/pricing, social proof oficial.
 
 ## Lente 3 — Canales y presencia digital
 
-El corazon del pantallazo de marketing. Cubrí cada canal y marcá los huecos.
+El corazon del pantallazo de marketing. Cubre cada canal y marca los huecos.
 
 - **SEO:** impresion de visibilidad para terminos de su categoria; calidad y
   profundidad del contenido indexable.
 - **GEO:** ¿aparece el cliente cuando se pregunta por "best [categoria] for
-  [sector]" en LLMs? ¿antes o despues que competidores? Probá 2-3 prompts
+  [sector]" en LLMs? ¿antes o despues que competidores? Prueba 2-3 prompts
   estandar de la categoria.
 - **Contenido owned:** blog/recursos (temas, frecuencia, autores, idiomas),
   newsletter, lead magnets, webinars.
@@ -49,15 +49,15 @@ de las redes devuelven casi nada por esa via. Procedimiento en orden:
 
 1. **Busqueda web primero** para lo que este indexado por Google (algun post,
    notas de prensa que citan publicaciones, perfiles cacheados).
-2. **Navegador (Claude in Chrome) si esta disponible:** abrí y leé las paginas
+2. **Navegador (Claude in Chrome) si esta disponible:** abre y lee las paginas
    reales — LinkedIn del/los founder(s), pagina de empresa en LinkedIn, perfiles
-   de Instagram/X/TikTok/YouTube de la marca. Usá las herramientas de leer
+   de Instagram/X/TikTok/YouTube de la marca. Usa las herramientas de leer
    pagina (navegar + extraer texto). Es contenido publico visto desde el
    navegador del operador (que ya esta logueado): visita asistida, no scraping
    automatizado con login propio. Respeta los terminos: solo lectura de
-   informacion publica, con humano en el loop.
+   informacion publica, con humano en el bucle.
 3. **Fallback de pegado manual:** si no hay navegador o el contenido pide login,
-   pedile al operador que pegue los posts recientes y el "about" de cada perfil.
+   pide al operador que pegue los posts recientes y el "about" de cada perfil.
 4. Lo que aun asi no consigas, va a la seccion de huecos. No lo inventes ni lo
    estimes como si fuera dato.
 
@@ -69,7 +69,7 @@ de las redes devuelven casi nada por esa via. Procedimiento en orden:
 - Comunidades publicas relevantes (Reddit, foros del sector, HN si es tech).
 - Noticias y prensa (12-18 meses): financiacion, lanzamientos, fichajes, premios.
 
-Extraé: lenguaje real vs. jerga oficial; objeciones y elogios recurrentes (con
+Extrae: lenguaje real vs. jerga oficial; objeciones y elogios recurrentes (con
 nº de menciones); casos de uso fuera del ICP declarado.
 
 ## Lente 5 — Footprint del equipo
@@ -80,7 +80,7 @@ importante — el **gap personal vs. corporate**: temas que defiende y que NO
 aparecen en la comunicacion oficial del producto.
 
 Para el LinkedIn del founder (la fuente mas rica y la que peor rinde por
-busqueda web), aplicá el mismo procedimiento de la Lente 3: navegador si esta
+busqueda web), aplica el mismo procedimiento de la Lente 3: navegador si esta
 disponible, fallback de pegado manual, y lo que falte a huecos.
 
 ## Lente 6 — Nicho y competidores (superficial)
@@ -109,7 +109,7 @@ gap analysis ni benchmarking serio.
 ## Reglas
 
 - Cada afirmacion con su etiqueta de trazabilidad.
-- Fuentes inaccesibles: decilo explicitamente.
+- Fuentes inaccesibles: dilo explicitamente.
 - Anonimiza reviewers/comentaristas; nombra solo personas clave del input.
 - Descarta datos sensibles (Art. 9 GDPR).
-- No interpretes en profundidad aca: extraé y senalá. La sintesis es el Paso 2.
+- No interpretes en profundidad aqui: extrae y señala. La sintesis es el Paso 2.

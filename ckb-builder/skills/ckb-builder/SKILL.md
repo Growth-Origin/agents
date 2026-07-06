@@ -1,6 +1,6 @@
 ---
 name: ckb-builder
-description: Construye el Client Knowledge Base (CKB) consolidado de un cliente nuevo a partir del material del onboarding. Toma como input la memoria del Pre-Onboarding y una o varias transcripciones de entrevistas, más documentación opcional del cliente, su web y LinkedIn, y produce cinco módulos consolidados (Identidad y negocio; Propuesta de valor y diferenciales; Voz, tono y lenguaje; Objeciones, fricciones y restricciones; Activos, expertise y voceros) más un índice maestro y un guion del workshop de validación con el cliente. Usar cuando el operador diga "construye el CKB", "construir el client knowledge base", "destila el material del onboarding", "promueve la memoria a CKB", "añade esta transcripción al CKB", "agente 1.1", "ckb-builder", o cuando aporte la memoria del Pre-Onboarding y transcripciones para sintetizarlas. No usar para definir el ICP definitivo del cliente (eso es trabajo del Agente 1.2), ni para análisis competitivo profundo (Agente 1.3), ni para keyword o prompt landscape (Agente 1.4).
+description: Construye el Client Knowledge Base (CKB) consolidado de un cliente nuevo a partir del material del onboarding. Toma como input la memoria del Pre-Onboarding y una o varias transcripciones de entrevistas, más documentación opcional del cliente, su web y LinkedIn, y produce cinco módulos consolidados (Identidad y negocio; Propuesta de valor y diferenciales; Voz, tono y lenguaje; Objeciones, fricciones y restricciones; Activos, expertise y voceros) más un índice maestro y un guion del workshop de validación con el cliente. Usar cuando el operador diga "construye el CKB", "construir el client knowledge base", "destila el material del onboarding", "promueve la memoria a CKB", "añade esta transcripción al CKB", "agente 1.1", "ckb-builder", o cuando aporte la memoria del Pre-Onboarding y transcripciones para sintetizarlas. No usar para definir el ICP (Agente 3), ni para análisis de mercado o competidores (Agentes 2.1 y 2.2), ni para keywords y prompts estratégicos (Agente 4).
 ---
 
 # CKB Builder — Agente 1.1
@@ -258,7 +258,7 @@ priorizas la síntesis y mueves detalle a evidencia.
     Módulo 1.3, pero NO produces ningún archivo nombrado «ICP», ni una
     carpeta `icp/`, ni una tabla de «los N ICPs del cliente». La
     definición y la nomenclatura del ICP son trabajo exclusivo del
-    Agente 1.2 (ICP Definition). Si tras la síntesis te sientes
+    Agente 3 (ICP Definer). Si tras la síntesis te sientes
     tentado a «cerrar el ICP», paras y dejas la pelota en las «Notas
     para agentes downstream» del Módulo 1.
 11. **NO simules respuestas del cliente al workshop.** El workshop lo
@@ -276,7 +276,7 @@ priorizas la síntesis y mueves detalle a evidencia.
     cosa fuera de eso (ICPs definidos, planes de contenido,
     calendarios editoriales, briefs competitivos, keyword research,
     prompt landscape, estrategia) es trabajo de otros agentes del
-    ecosistema (1.2, 1.3, 1.4 y posteriores). Si te tientas, paras.
+    ecosistema (2.1, 2.2, 3, 4 y posteriores). Si te tientas, paras.
 
 ## Dónde guardas el output
 
@@ -304,8 +304,8 @@ identidad de voceros. Solo con el OK del operador entras al Paso 2
   trazabilidad + mapeo desde la memoria del Agente 1).
 - `references/guia-recoleccion.md` — guía operativa de recolección:
   sitemap + WebFetch + Claude in Chrome para voceros, ingestión de
-  transcripciones y PDFs *(pendiente en la siguiente entrega)*.
+  transcripciones y PDFs.
 - `references/plantillas-modulos.md` — las cinco plantillas de los
-  módulos con sus subapartados *(pendiente)*.
-- `references/guion-workshop.md` — plantilla del guion del workshop
-  *(pendiente)*.
+  módulos con sus subapartados.
+- `references/guion-workshop.md` — plantilla del guion del workshop y de
+  las decisiones pendientes en blanco.

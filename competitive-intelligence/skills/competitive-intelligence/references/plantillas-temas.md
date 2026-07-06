@@ -91,7 +91,7 @@ Tres tipos de pregunta, con repeticiones:
 ~~~markdown
 ## 4.4 Perfil de enlaces (backlinks)
 
-**Estado en Nivel 1: requiere herramienta (Nivel 2+) — SE Ranking.**
+**Estado en Nivel 1: requiere herramienta (Nivel 2+) — DataForSEO o Semrush/Ahrefs.**
 No hay sustituto público fiable para el perfil de backlinks ni el link gap. Se
 deja marcado para la ejecución de Nivel 2. (Si el operador aporta un export de
 una herramienta, se procesa aquí.)
@@ -207,10 +207,10 @@ autocontenida, con su agente destino.
 |------------------------------------------------------|----------------|
 | [Keywords y páginas a atacar — gaps] | Estrategia · Contenido |
 | [Prompts/IA donde el competidor es fuerte y el cliente debe entrar] | Estrategia · Contenido |
-| [Qué opina la IA del competidor y qué aprender] | Estrategia · ICP (1.2) |
+| [Qué opina la IA del competidor y qué aprender] | Estrategia · ICP (Agente 3) |
 | [Objetivos de backlinks — link gap] *(pendiente Nivel 2+)* | Estrategia (Capa 2) |
 | [Mejoras de arquitectura e interlinking a replicar/superar] | Estrategia · Contenido |
-| [Elementos E-E-A-T y de autoría a construir] | Contenido · ICP (1.2) |
+| [Elementos E-E-A-T y de autoría a construir] | Contenido · ICP (Agente 3) |
 | [Hacks de utilidad replicables] | Contenido (Capa 3) |
 | [Elementos de personalidad / UX / CMS a considerar] | Estrategia · Contenido |
 
@@ -219,7 +219,7 @@ autocontenida, con su agente destino.
 |----------------|--------------|
 | Estrategia (Capa 2) | ... |
 | Contenido (Capa 3) | ... |
-| Agente 1.2 (ICP) | ... |
+| Agente 3 (ICP) | ... |
 ~~~
 
 Si una fila depende de un dato Nivel 2+ aún no disponible, se incluye igual con la

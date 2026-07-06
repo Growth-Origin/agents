@@ -11,10 +11,11 @@
 
 Toda afirmacion factual lleva una etiqueta:
 
-`‹fuente: URL | acceso: AAAA-MM-DD | confianza: alta/media/baja | tipo: hecho/interpretacion/hipotesis›`
+`‹fuente: URL | acceso: AAAA-MM-DD | confianza: alta/media-alta/media/baja | tipo: hecho/interpretacion/hipotesis›`
 
-- **confianza:** alta (fuente oficial directa), media (secundaria/indexada),
-  baja (inferencia con poca evidencia).
+- **confianza:** alta (varias fuentes coincidentes), media-alta (una fuente
+  oficial fiable), media (secundaria/indexada), baja (inferencia con poca
+  evidencia). Misma escala que el resto del ecosistema (CKB, 2.1, 2.2, 3, 4).
 - **tipo:** hecho (verificable en la fuente), interpretacion (lectura del
   agente), hipotesis (a confirmar en la entrevista).
 - Lo no verificable NO se afirma: va a la seccion 13 (Huecos).
@@ -27,8 +28,8 @@ nombre_comercial: ""
 fecha_creacion: ""            # AAAA-MM-DD
 ultima_actualizacion: ""
 version_memoria: "0.1"
-creado_por: "Pre-Onboarding de Cliente v0.1"
-estado: "borrador"            # borrador | revisado-por-humano | en-uso
+creado_por: "Agente 1.0 Pre-Onboarding de Cliente"
+estado: "borrador"            # borrador | en-revision | validado (misma escala que el CKB)
 revisado_por: ""
 ```
 
@@ -140,4 +141,4 @@ directamente el pedido de documentacion y accesos.
 
 | Fecha | Quien/que agente | Cambio |
 |-------|------------------|--------|
-| AAAA-MM-DD | Pre-Onboarding de Cliente v0.1 | Creacion inicial |
+| AAAA-MM-DD | Agente 1.0 Pre-Onboarding de Cliente | Creacion inicial |

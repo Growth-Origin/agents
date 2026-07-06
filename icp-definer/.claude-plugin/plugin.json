@@ -1,6 +1,6 @@
 {
   "name": "icp-definer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Define el Cliente Ideal (ICP) accionable de un cliente para SEO y GEO. Parte del CKB, del Agente 2.1, del 2.2 o de un paquete de contexto externo, y sintetiza el conjunto minimo de perfiles (ICP + buyer persona + JTBD + capa GEO/SEO con firma de prompt) mas la persona negativa, la matriz persona-etapa-intencion y el filtro anti-persona. Humano-en-el-bucle. Dos niveles de investigacion con estimacion de coste. Idioma: espanol de Espana.",
   "author": {
     "name": "Growth Origin"

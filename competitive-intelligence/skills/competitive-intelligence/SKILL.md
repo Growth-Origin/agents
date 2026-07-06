@@ -1,6 +1,6 @@
 ---
 name: competitive-intelligence
-description: Hace ingeniería inversa de los competidores que mejor posicionan en el nicho del cliente para extraer palancas accionables de SEO y GEO. Lee el CKB del Agente 1.1 y los outputs del Agente 2.1 (Mercado), propone los competidores a analizar y los disecciona en once temas (rendimiento de búsqueda, rendimiento generativo, opinión de las IAs sobre el competidor, backlinks, arquitectura web, interlinking y clusters, E-E-A-T, hacks de utilidad, personalidad comunicativa, CMS/código/UX) en formato insight→implicación→acción, y cierra con una síntesis accionable por agente destino. Usar cuando el operador diga "analiza los competidores de [cliente]", "competitive intelligence", "disecciona a la competencia", "battlecard SEO/GEO", "agente 2.2", "competitive-intelligence", o cuando aporte el CKB y el análisis de mercado de un cliente para analizar a sus competidores. NO usar para el retrato de mercado en abstracto (eso es el Agente 2.1), ni para definir el ICP (Agente 1.2), ni para fijar la estrategia (Capa 2).
+description: Hace ingeniería inversa de los competidores que mejor posicionan en el nicho del cliente para extraer palancas accionables de SEO y GEO. Lee el CKB del Agente 1.1 y los outputs del Agente 2.1 (Mercado), propone los competidores a analizar y los disecciona en once temas (rendimiento de búsqueda, rendimiento generativo, opinión de las IAs sobre el competidor, backlinks, arquitectura web, interlinking y clusters, E-E-A-T, hacks de utilidad, personalidad comunicativa, CMS/código/UX) en formato insight→implicación→acción, y cierra con una síntesis accionable por agente destino. Usar cuando el operador diga "analiza los competidores de [cliente]", "competitive intelligence", "disecciona a la competencia", "battlecard SEO/GEO", "agente 2.2", "competitive-intelligence", o cuando aporte el CKB y el análisis de mercado de un cliente para analizar a sus competidores. NO usar para el retrato de mercado en abstracto (eso es el Agente 2.1), ni para definir el ICP (Agente 3), ni para fijar la estrategia (Capa 2).
 ---
 
 # Competitive Intelligence — Agente 2.2
@@ -13,7 +13,7 @@ de palancas accionables**.
 
 Lees el Client Knowledge Base (CKB) del Agente 1.1 y los outputs del Agente 2.1
 (Mercado), y tu salida la consumen los agentes downstream: Estrategia (Capa 2),
-Contenido (Capa 3) e ICP (Agente 1.2).
+Contenido (Capa 3) e ICP (Agente 3).
 
 **Principio rector:** todo output debe ser accionable y servir a un agente
 posterior. Cada hallazgo sigue la regla **insight → implicación → acción**: qué
@@ -249,7 +249,7 @@ pasas en silencio.
 2. **Agregas** y redactas la **síntesis accionable (tema 4.11)** dentro del
    documento y como `sintesis_accionable.md` aparte: cada conclusión es
    afirmación verificable y autocontenida con su **agente destino** (Estrategia /
-   Contenido / ICP 1.2).
+   Contenido / ICP Agente 3).
 3. **Generas el resumen ejecutivo en PDF** (`references/plantilla-resumen-pdf.md`).
 4. **Generas `audit/execution_log.json` y `audit/sources_accessed.json`** (con el
    recuento de búsquedas frente al presupuesto, motores auditados y los que
@@ -275,7 +275,7 @@ pasas en silencio.
    fluctúan; reportas patrón y variabilidad, no una respuesta única.
 6. **Propón y valida competidores antes de diseccionar** (checkpoint del Paso 1).
 7. **No salgas del scope.** No haces el retrato de mercado en abstracto (eso es
-   el 2.1), no defines el ICP (Agente 1.2), no fijas la estrategia (Capa 2). Tu
+   el 2.1), no defines el ICP (Agente 3), no fijas la estrategia (Capa 2). Tu
    salida es: propuesta de competidores + once temas por competidor + síntesis
    accionable + PDF + `_fuentes/` + audit. Si te tientas, paras.
 8. **Cierras siempre con la síntesis accionable (4.11)**, con el agente destino
@@ -343,4 +343,7 @@ región EU) solo cuando el volumen lo justifique.
   PageSpeed para Core Web Vitals, criterios de parada y compliance.
 - `references/plantillas-temas.md` — plantillas rellenables de los 11 temas
   (insight→implicación→acción) y la tabla de la síntesis 4.11.
+- `references/herramientas-nivel2.md` — qué aporta y qué cobra cada herramienta
+  de Nivel 2 por tema, con el método y la tabla de estimación de coste del
+  guardarraíl.
 - `references/plantilla-resumen-pdf.md` — estructura del resumen ejecutivo en PDF.

@@ -42,7 +42,7 @@ Cabecera de `analisis_competitivo.md`:
 
 **Versión:** 0.1
 **Fecha:** AAAA-MM-DD
-**Nivel de implementación:** 1 (sin APIs de pago)
+**Nivel de investigación:** 1 (sin herramientas) | 2 (con: DataForSEO · Semrush · ambos)
 **Parámetros de enfoque:** sector/nicho, modelo, geografía, características, tipo de competidor
 **Competidores analizados:** [lista validada]
 **CKB de origen:** ruta y versión
@@ -109,8 +109,8 @@ El contexto puede venir del **CKB (1.1)**, de un **análisis previo**, o de un
    comparativas + sobre el propio competidor, con repeticiones. Bloque
    diferencial.
 4. **4.4 Perfil de enlaces (backlinks)** — mejores enlaces, patrones de
-   link-building, link gap. *(Nivel 2+: requiere SE Ranking; en Nivel 1 se marca
-   pendiente.)*
+   link-building, link gap. *(Nivel 2+: DataForSEO o Semrush/Ahrefs; en Nivel 1
+   se marca pendiente.)*
 5. **4.5 Arquitectura web** — estructura, jerarquía, qué le da ventaja, qué
    podría mejorar.
 6. **4.6 Interlinking y clusters de contenido** — enlazado interno, páginas
@@ -152,10 +152,10 @@ cada conclusión, afirmación verificable y autocontenida con su agente destino.
 |-----------------------|----------------|
 | Keywords y páginas a atacar (gaps) | Estrategia · Contenido |
 | Prompts/IA donde el competidor es fuerte y el cliente debe entrar | Estrategia · Contenido |
-| Qué opina la IA del competidor y qué aprender de ello | Estrategia · ICP (1.2) |
+| Qué opina la IA del competidor y qué aprender de ello | Estrategia · ICP (Agente 3) |
 | Objetivos de backlinks (link gap) | Estrategia (Capa 2) |
 | Mejoras de arquitectura e interlinking a replicar/superar | Estrategia · Contenido |
-| Elementos E-E-A-T y de autoría a construir | Contenido · ICP (1.2) |
+| Elementos E-E-A-T y de autoría a construir | Contenido · ICP (Agente 3) |
 | Hacks de utilidad replicables | Contenido (Capa 3) |
 | Elementos de personalidad / UX / CMS a considerar | Estrategia · Contenido |
 

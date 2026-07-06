@@ -225,7 +225,7 @@ prompt (GEO Metrics / persona / pregunta de mercado) y, donde haya datos, su
 rendimiento.
 
 > Nota: las 5 buyer personas del módulo prompt son **de trabajo**, para generar
-> prompts; NO son la definición de ICP (eso es el Agente 1.2). No produzcas un
+> prompts; NO son la definición de ICP (eso es el Agente 3). No produzcas un
 > entregable «ICP».
 
 ## Uso de GEO Metrics (resumen operativo)

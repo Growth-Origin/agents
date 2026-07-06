@@ -68,12 +68,24 @@ solapamiento). Número orientativo a diseccionar: **3–5 competidores**.
 ## Plantilla de recogida (lo que el agente muestra al operador)
 
 ~~~text
+Antes de nada: ¿qué nivel de investigación quieres?
+- Nivel 1 (sin herramientas de pago): Claude + web + Chrome. Coste cero.
+- Nivel 2 (con herramientas): solo DataForSEO, solo Semrush, o ambos.
+  ⚠️ Consumen créditos; antes de tiradas grandes te doy una estimación de coste.
+
 Para arrancar el análisis competitivo necesito:
 
 OBLIGATORIOS
 - slug_cliente: ...
-- ckb_cliente (ruta a ckb/): ...
-- analisis_mercado (ruta al output del Agente 2.1): ...
+- contexto del cliente (elige una; no dependo en duro del Agente 1.1):
+    · ruta al CKB (ckb/) del Agente 1.1, o
+    · ruta al análisis de mercado del Agente 2.1, o
+    · paquete de contexto externo: rutas/documentos (brief, onboarding de otra
+      agencia, web del cliente)
+
+RECOMENDADO
+- analisis_mercado (ruta al output del Agente 2.1): ancla el benchmark; si no
+  existe, rindo igual pero menos calibrado y te propongo ejecutarlo antes
 
 PARÁMETROS DE ENFOQUE
 - sector_nicho: ...

@@ -205,4 +205,29 @@ Documento que el consultor rellena durante el workshop:
 |---|------|----------|---------------------|
 | 1 |      |          |                     |
 
-##
+## Decisiones aplazadas
+
+| # | Tema | Por qué se aplaza | Cuándo y cómo se cerrará |
+|---|------|--------------------|---------------------------|
+
+## Acciones del cliente acordadas
+
+| # | Acción | Responsable | Plazo |
+|---|--------|-------------|-------|
+~~~
+
+## Notas de generación para el agente
+
+- Para cada bloque del guion, rellena los placeholders con las
+  hipótesis abiertas, incongruencias, diferenciales y riesgos
+  concretos del cliente que están en los módulos del CKB. No dejes
+  placeholders vacíos en el guion final entregado al consultor.
+- Si un módulo del CKB tiene confianza global `alta` y sin hipótesis
+  abiertas relevantes, el bloque correspondiente puede acortarse o
+  pasarse como repaso rápido. No fuerces 15 minutos si no hay
+  decisiones que pedir.
+- Si un módulo tiene confianza `baja` o muchas hipótesis abiertas,
+  amplía el bloque correspondiente proporcionalmente, dentro del
+  presupuesto total de 60–90 minutos.
+- Todo el guion en español de España, sin argentinismos. Las citas
+  literales conservan su idioma original.
