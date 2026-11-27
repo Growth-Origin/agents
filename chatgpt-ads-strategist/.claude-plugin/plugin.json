@@ -1,0 +1,18 @@
+{
+  "name": "chatgpt-ads-strategist",
+  "version": "0.1.0",
+  "description": "Estratega senior de ChatGPT Ads (OpenAI Ads Manager). Diagnostica negocio y economía, analiza la web, convierte el ICP en Buyer Situations y Conversation Map, clasifica la intención, redacta context hints, diseña campaña, ad groups, anuncios y landing, define presupuesto de aprendizaje, tracking, KPIs y plan de 30 días, y optimiza con resultados reales. Entrega un Word con branding Growth Origin. Idioma: español de España.",
+  "author": {
+    "name": "Growth Origin"
+  },
+  "keywords": [
+    "chatgpt-ads",
+    "openai-ads",
+    "publicidad-conversacional",
+    "context-hints",
+    "paid-media",
+    "performance",
+    "marketing",
+    "agency"
+  ]
+}

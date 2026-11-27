@@ -4,6 +4,9 @@
   "owner": {
     "name": "Growth Origin"
   },
+  "metadata": {
+    "description": "Agentes de Growth Origin para analizar clientes: pre-onboarding, CKB, mercado, competencia, ICP, keywords y prompts, arquitectura web y herramientas de SEO local, evaluación de keywords y ChatGPT Ads."
+  },
   "plugins": [
     {
       "name": "pre-onboarding-cliente",
@@ -39,6 +42,21 @@
       "name": "site-architect",
       "description": "Agente 5 (3.2 en la spec), segundo de la Capa de Producción. Convierte el universo priorizado del Agente 4 en la arquitectura definitiva del sitio: mapa de URLs final con acción por URL, plan de landings, clusters de blog con vocero, matriz prompt a URL, reglamento de interlinking SEO y GEO y roadmap por olas con Task Priority Score. Anti-canibalización por solapamiento de SERP. Checkpoint humano obligatorio. Dos niveles con estimación de coste. Idioma: español de España.",
       "source": "./site-architect"
+    },
+    {
+      "name": "local-link-prospector",
+      "description": "Prospector de enlaces y citaciones gratuitas para SEO y GEO local en España y LATAM. A partir de una ficha de Google Business Profile o de una web local, entrega un mapa priorizado de directorios generalistas y sectoriales, citaciones NAP y backlinks no-directorio (asociaciones, prensa local, patrocinios, gremios), con verificación en vivo, URL de alta, fase de ejecución y plan de monitorización. Idioma: español de España.",
+      "source": "./local-link-prospector"
+    },
+    {
+      "name": "jev-keywords",
+      "description": "Evalúa la calidad de un Excel de keywords ya trabajado con Jev (typesafe-ai/jev) vía Vercel AI Gateway. Claude genera el contexto del cliente (desde el chat o el CKB) y el del Excel, y Jev puntúa cada keyword en relevancia, intención, funnel, potencial GEO y prioridad, con veredicto priorizar/revisar/descartar. Devuelve una copia del Excel con columnas nuevas. Requiere Python 3, openpyxl y AI_GATEWAY_API_KEY.",
+      "source": "./jev-keywords"
+    },
+    {
+      "name": "chatgpt-ads-strategist",
+      "description": "Estratega senior de ChatGPT Ads (OpenAI Ads Manager). Diagnostica negocio y economía, analiza la web, convierte el ICP en Buyer Situations y Conversation Map, clasifica la intención, redacta context hints, diseña campaña, ad groups, anuncios y landing, define presupuesto de aprendizaje, tracking, KPIs y plan de 30 días, y optimiza con resultados reales. Entrega un Word con branding Growth Origin. Idioma: español de España.",
+      "source": "./chatgpt-ads-strategist"
     }
   ]
 }
