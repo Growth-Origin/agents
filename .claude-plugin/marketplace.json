@@ -34,6 +34,11 @@
       "name": "strategic-keywords-prompts",
       "description": "Agente 4, primer agente de la Capa de Estrategia. Cruza el conocimiento de cliente, ICP, mercado y competidores con datos duros de búsqueda (DataForSEO) y de IA (GEO Metrics) para entregar un universo priorizado de keywords y prompts, con scoring transparente (KPS y PPS), filtro anti-persona como exclusión dura, fusión por tema (doble victoria / SEO-led / GEO-led / latente) y un esbozo de priorización. Dos niveles con estimación de coste. Idioma: español de España.",
       "source": "./strategic-keywords-prompts"
+    },
+    {
+      "name": "site-architect",
+      "description": "Agente 5 (3.2 en la spec), segundo de la Capa de Producción. Convierte el universo priorizado del Agente 4 en la arquitectura definitiva del sitio: mapa de URLs final con acción por URL, plan de landings, clusters de blog con vocero, matriz prompt a URL, reglamento de interlinking SEO y GEO y roadmap por olas con Task Priority Score. Anti-canibalización por solapamiento de SERP. Checkpoint humano obligatorio. Dos niveles con estimación de coste. Idioma: español de España.",
+      "source": "./site-architect"
     }
   ]
 }

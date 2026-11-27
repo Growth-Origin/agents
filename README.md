@@ -32,9 +32,15 @@ conocimiento del cliente.
   priorizado de keywords y prompts (scoring KPS/PPS, filtro anti-persona,
   fusión topic-led y esbozo de priorización) en un Excel de 4 pestañas.
   Selector de nivel de investigación con estimación de coste en Nivel 2.
+- **site-architect** (v0.1.0) — Agente 5 (3.2 en la spec): convierte el
+  universo priorizado del Agente 4 en la arquitectura definitiva del sitio
+  (mapa de URLs con acción por URL, plan de landings, clusters de blog,
+  matriz prompt→URL, interlinking SEO+GEO y roadmap por olas con TPS), con
+  anti-canibalización por solapamiento de SERP y checkpoint humano
+  obligatorio. Selector de nivel con estimación de coste.
 
-Próximos agentes del ecosistema (por construir): Contenido/Arquitectura
-(Capa 3), 1.4 Search & Prompt Landscape.
+Próximos agentes del ecosistema (por construir): briefs y producción de
+contenido (Capa 3) y medición (Capa 4).
 
 Idioma de salida de todos los agentes: **español de España**
 (peninsular). Sin argentinismos.
@@ -71,8 +77,8 @@ Idioma de salida de todos los agentes: **español de España**
 `Ajustes → Plugins → Add plugin` y pegar `Growth-Origin/agents`. Después
 instalar los plugins que se necesiten (`pre-onboarding-cliente`,
 `ckb-builder`, `market-intelligence`, `competitive-intelligence`,
-`icp-definer`, `strategic-keywords-prompts`) por separado desde el mismo
-panel.
+`icp-definer`, `strategic-keywords-prompts`, `site-architect`) por separado
+desde el mismo panel.
 
 ### En Claude Code (terminal)
 
@@ -84,6 +90,7 @@ panel.
 /plugin install competitive-intelligence@growth-origin
 /plugin install icp-definer@growth-origin
 /plugin install strategic-keywords-prompts@growth-origin
+/plugin install site-architect@growth-origin
 ```
 
 ---
@@ -99,6 +106,7 @@ Cada persona corre la actualización cuando quiera:
 /plugin update competitive-intelligence
 /plugin update icp-definer
 /plugin update strategic-keywords-prompts
+/plugin update site-architect
 ```
 
 La actualización es manual por defecto: no se cambia nada en la máquina
@@ -110,8 +118,8 @@ de nadie sin que lo pida.
 
 1. Editar los archivos del plugin afectado dentro de su carpeta
    (`pre-onboarding-cliente/`, `ckb-builder/`, `market-intelligence/`,
-   `competitive-intelligence/`, `icp-definer/` o
-   `strategic-keywords-prompts/`).
+   `competitive-intelligence/`, `icp-definer/`,
+   `strategic-keywords-prompts/` o `site-architect/`).
 2. Subir el número de versión en su `.claude-plugin/plugin.json`
    (por ejemplo `0.3.0` → `0.4.0`).
 3. Commit y push al repo.
@@ -148,8 +156,12 @@ growth-origin-agents/
 │   ├── .claude-plugin/plugin.json
 │   ├── README.md
 │   └── skills/icp-definer/
-└── strategic-keywords-prompts/ # plugin 6 (Agente 4)
+├── strategic-keywords-prompts/ # plugin 6 (Agente 4)
+│   ├── .claude-plugin/plugin.json
+│   ├── README.md
+│   └── skills/strategic-keywords-prompts/
+└── site-architect/             # plugin 7 (Agente 5 · 3.2 en la spec)
     ├── .claude-plugin/plugin.json
     ├── README.md
-    └── skills/strategic-keywords-prompts/
+    └── skills/site-architect/
 ```

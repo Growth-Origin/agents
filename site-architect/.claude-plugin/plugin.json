@@ -1,0 +1,20 @@
+{
+  "name": "site-architect",
+  "version": "0.1.0",
+  "description": "Agente 5 (3.2 en la spec), segundo de la Capa de Produccion. Convierte el universo priorizado del Agente 4 en la arquitectura definitiva del sitio, con mapa de URLs final (mantener, optimizar, crear, consolidar, eliminar), plan de landings, clusters de blog con vocero, matriz prompt a URL, reglamento de interlinking SEO y GEO y roadmap por olas con Task Priority Score. Anti-canibalizacion por solapamiento de SERP. Checkpoint humano obligatorio. Idioma espanol de Espana.",
+  "author": {
+    "name": "Growth Origin"
+  },
+  "keywords": [
+    "site-architect",
+    "arquitectura-web",
+    "interlinking",
+    "landings",
+    "clusters",
+    "seo",
+    "geo",
+    "generative-engine-optimization",
+    "marketing",
+    "agency"
+  ]
+}
