@@ -1,0 +1,19 @@
+{
+  "name": "local-link-prospector",
+  "version": "0.1.0",
+  "description": "Prospector de enlaces y citaciones gratuitas para SEO y GEO local en España y LATAM. A partir de una ficha de Google Business Profile o de una web local, entrega un mapa priorizado de directorios generalistas y sectoriales, citaciones NAP y backlinks no-directorio (asociaciones, prensa local, patrocinios, gremios), con verificación en vivo, URL de alta, fase de ejecución y plan de monitorización. Idioma: español de España.",
+  "author": {
+    "name": "Growth Origin"
+  },
+  "keywords": [
+    "seo-local",
+    "citations",
+    "nap",
+    "backlinks",
+    "google-business-profile",
+    "directorios",
+    "geo",
+    "marketing",
+    "agency"
+  ]
+}

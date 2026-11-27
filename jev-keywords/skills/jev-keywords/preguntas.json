@@ -1,0 +1,47 @@
+{
+  "relevancia": {
+    "type": "score",
+    "instructions": "¿Cuánto encaja esta keyword con lo que vende el cliente y con su cliente ideal, según el contexto?",
+    "criteria": [
+      "0: nada que ver con el negocio o atrae al público equivocado",
+      "1: relación lejana, solo tangencial",
+      "2: relacionada con el sector pero no con su oferta concreta",
+      "3: encaja con su oferta y su público",
+      "4: encaje perfecto, es exactamente lo que busca su cliente ideal"
+    ]
+  },
+  "intencion": {
+    "type": "choice",
+    "instructions": "¿Cuál es la intención principal de quien busca esta keyword?",
+    "criteria": {
+      "informacional": "quiere aprender o resolver una duda",
+      "comercial": "compara opciones o investiga antes de contratar o comprar",
+      "transaccional": "quiere contratar, comprar o pedir presupuesto ya",
+      "navegacional": "busca una marca o web concreta",
+      "local": "busca un proveedor o sitio en una zona concreta"
+    }
+  },
+  "funnel": {
+    "type": "choice",
+    "instructions": "¿En qué etapa del funnel está quien hace esta búsqueda?",
+    "criteria": {
+      "TOFU": "descubrimiento, todavía no sabe que necesita la solución",
+      "MOFU": "consideración, evalúa soluciones y proveedores",
+      "BOFU": "decisión, listo para elegir proveedor"
+    }
+  },
+  "potencial_geo": {
+    "type": "noul",
+    "instructions": "¿Es una búsqueda que la gente también haría a un asistente de IA (ChatGPT, Perplexity, Google AI) y en cuya respuesta el cliente podría ser citado o recomendado?"
+  },
+  "prioridad": {
+    "type": "score",
+    "instructions": "Teniendo en cuenta el encaje con el cliente, los datos de la keyword en el Excel (volumen, dificultad y el resto) y su potencial para que el cliente aparezca citado en respuestas de asistentes de IA (GEO), ¿qué prioridad debería tener para trabajarla?",
+    "criteria": [
+      "0: descartar",
+      "1: baja, solo si sobra capacidad",
+      "2: media, entra en el plan",
+      "3: alta, trabajar primero"
+    ]
+  }
+}

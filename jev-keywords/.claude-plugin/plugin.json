@@ -1,0 +1,19 @@
+{
+  "name": "jev-keywords",
+  "version": "0.1.0",
+  "description": "Evalúa la calidad de un Excel de keywords ya trabajado con Jev (typesafe-ai/jev) vía Vercel AI Gateway. Claude genera el contexto del cliente (desde el chat o el CKB) y el del Excel, y Jev puntúa cada keyword en relevancia, intención, funnel, potencial GEO y prioridad, con veredicto priorizar/revisar/descartar. Devuelve una copia del Excel con columnas nuevas. Requiere Python 3, openpyxl y AI_GATEWAY_API_KEY.",
+  "author": {
+    "name": "Growth Origin"
+  },
+  "keywords": [
+    "keywords",
+    "evaluacion",
+    "jev",
+    "seo",
+    "geo",
+    "excel",
+    "priorizacion",
+    "marketing",
+    "agency"
+  ]
+}
